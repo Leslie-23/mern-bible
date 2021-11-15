@@ -1,17 +1,46 @@
-import React from 'react';
-import { Route, Routes } from 'react-router-dom';
-import './App.css';
-import SignupPage from '../SignupPage/SignupPage';
-import LoginPage from '../LoginPage/LoginPage';
+import { React, useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import "./App.css";
+import SignupPage from "../SignupPage/SignupPage";
+import LoginPage from "../LoginPage/LoginPage";
+import userService from "../../utils/userService";
+import Search from "../Search/Search";
+import Home from "../Home/Home";
+import Layout from "../Layout/Layout";
 
 function App() {
+  const [user, setUser] = useState(userService.getUser());
+
+  const handleSignupOrLogin = () => {
+    setUser(userService.getUser());
+  };
+
+  const handleLogout = () => {
+    userService.logout();
+    setUser(null);
+  };
+
+  // element={<Home user={user} handleLogout={handleLogout} />}
+
   return (
-      <Routes>
-          <Route path='/' element={<h1>Home Page</h1>} />
-          <Route path="/login" element={<LoginPage />} />
-          
-          <Route path="/signup" element={<SignupPage />} />
-      </Routes>
+    <Routes>
+      <Route
+        path="/"
+        element={<Layout user={user} handleLogout={handleLogout} />}
+      >
+        <Route index element={<Home />} />
+        <Route path="search" element={<Search />} />
+        <Route
+          path="login"
+          element={<LoginPage handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route
+          path="signup"
+          element={<SignupPage handleSignupOrLogin={handleSignupOrLogin} />}
+        />
+        <Route path="logout" element={<Home />} />
+      </Route>
+    </Routes>
   );
 }
 
