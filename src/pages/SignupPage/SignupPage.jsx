@@ -22,8 +22,9 @@ export default function SignUpPage(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(fields);
+    
     try {
+      await userService.signup(fields)
       props.handleSignupOrLogin();
       navigate("/search");
     } catch (err) {
@@ -33,12 +34,12 @@ export default function SignUpPage(props) {
 
   return (
     <div>
-      <h1>Sign up Page!</h1>
-      <form onSubmit={handleSubmit}>
+      <h1>Sign up Page</h1>
+      <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
           name="name"
-          placeholder="Name"
+          placeholder="name"
           value={fields.name}
           onChange={handleChange}
           required={true}
@@ -62,7 +63,7 @@ export default function SignUpPage(props) {
         <input
           type="password"
           name="passwordConf"
-          placeholder="Confirm Password"
+          placeholder="confirm cassword"
           value={fields.passwordConf}
           onChange={handleChange}
           required={true}

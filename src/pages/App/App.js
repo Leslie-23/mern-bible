@@ -20,8 +20,6 @@ function App() {
     setUser(null);
   };
 
-  // element={<Home user={user} handleLogout={handleLogout} />}
-
   return (
     <Routes>
       <Route

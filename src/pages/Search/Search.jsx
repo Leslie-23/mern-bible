@@ -1,3 +1,10 @@
+import SearchForm from "../../components/SearchForm/SearchForm";
+
 export default function Search(props) {
-  return <h1>Search</h1>;
+  return (
+    <div>
+      <h1>Search</h1>
+      <SearchForm />
+    </div>
+  );
 }
