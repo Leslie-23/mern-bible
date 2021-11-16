@@ -1,8 +1,13 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Chapters from "../../Arrays/Chapters";
 
 export default function SearchForm() {
-  const [qBook, setQBook] = useState("");
+  const [query, setQuery] = useState({
+    book: "",
+    chapter: null,
+  });
+
+  //   const [chapterArray, setChapterArray] = useState([]);
 
   const bookList = Chapters.map((c, i) => {
     return (
@@ -12,22 +17,22 @@ export default function SearchForm() {
     );
   });
 
-  const handleBookChange = (e) => {
-    setQBook(e.target.value);
+  const handleChange = (e) => {
+    setQuery({ ...query, [e.target.name]: e.target.value });
   };
+  console.log(query.book, "<= query.book");
+  console.log(query.chapter, "<= query.chapter");
 
-  console.log(qBook);
-
-  const bookObj = Chapters.find(({ book }) => book === qBook);
-  let chapterArr = [];
+  const chapterArray = [];
+  const bookObj = Chapters.find(({ book }) => book === query.book);
   if (bookObj) {
-    console.log(bookObj.chapters);
+    console.log(bookObj.chapters, "<= bookObj.chapters");
     for (let n = 1; n <= bookObj.chapters; n++) {
-      chapterArr.push(n);
+      chapterArray.push(n);
     }
   }
 
-  const chapterList = chapterArr.map((n, i) => {
+  const chapterList = chapterArray.map((n, i) => {
     return (
       <option value={n} key={i}>
         {n}
@@ -39,15 +44,16 @@ export default function SearchForm() {
     e.preventDefault();
     console.log("submitted");
   };
+
   return (
     <div>
       <h1>SearchForm go here</h1>
       <form action="" onSubmit={handleSubmit}>
-        <select name="book" id="" onChange={handleBookChange}>
+        <select name="book" id="" onChange={handleChange}>
           <option value="book">book</option>
           {bookList}
         </select>
-        <select name="chapter" id="">
+        <select name="chapter" id="" onChange={handleChange}>
           <option value="chapter">chapter</option>
           {chapterList}
         </select>
