@@ -7,6 +7,7 @@ import userService from "../../utils/userService";
 import Search from "../Search/Search";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
+import Saved from "../Saved/Saved";
 
 function App() {
   const [user, setUser] = useState(userService.getUser());
@@ -28,6 +29,7 @@ function App() {
       >
         <Route index element={<Home />} />
         <Route path="search" element={<Search />} />
+        <Route path="saved" element={<Saved />} />
         <Route
           path="login"
           element={<LoginPage handleSignupOrLogin={handleSignupOrLogin} />}
