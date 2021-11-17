@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Chapters from "../../Arrays/Chapters";
 
-export default function SearchForm() {
+export default function SearchForm(props) {
   const [query, setQuery] = useState({
     book: "",
     chapter: null,
@@ -42,12 +42,12 @@ export default function SearchForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    props.getQueryObj(query);
     console.log("submitted");
   };
 
   return (
     <div>
-      <h1>SearchForm go here</h1>
       <form action="" onSubmit={handleSubmit}>
         <select name="book" id="" onChange={handleChange}>
           <option value="book">book</option>
