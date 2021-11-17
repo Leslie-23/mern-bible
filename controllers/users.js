@@ -40,6 +40,10 @@ async function login(req, res) {
   }
 }
 
+const list = (req, res) => {
+  //find saved list belonging to user
+}
+
 /*----- Helper Functions -----*/
 
 function createJWT(user) {

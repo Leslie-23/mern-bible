@@ -3,6 +3,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
+const { default: Search } = require('./src/pages/Search/Search');
 
 require('./config/database');
 
@@ -21,6 +22,7 @@ app.use(express.static(path.join(__dirname, 'build')));
 app.use(require('./config/auth')); 
 // api routes must be before the "catch all" route
 app.use('/api/users', require('./routes/api/users'));
+app.use("/api/search", require("./routes/api/search"));
 // "catch all" route
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'build', 'index.html'));
