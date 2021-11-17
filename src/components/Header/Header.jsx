@@ -3,12 +3,12 @@ export default function Header(props) {
     <nav>
       <a href="/">Home</a>
       &nbsp;
-      <a href="/search">Search</a>
+      <a href="/search">Start Reading</a>
       &nbsp;
       {props.user ? (
         <span>
           <a href="">
-            <button>{props.user.name.split(" ")[0][0]}</button>
+            <button>{props.user.username.split(" ")[0][0]}</button>
           </a>
           &nbsp;
           <a href="/saved">My Saved Verses</a>

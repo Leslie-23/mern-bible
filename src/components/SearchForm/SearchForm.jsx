@@ -1,13 +1,11 @@
 import { useState } from "react";
-import Chapters from "../../Arrays/Chapters";
+import Chapters from "../../Fixtures/Chapters";
 
 export default function SearchForm(props) {
   const [query, setQuery] = useState({
     book: "",
     chapter: null,
   });
-
-  //   const [chapterArray, setChapterArray] = useState([]);
 
   const bookList = Chapters.map((c, i) => {
     return (
@@ -23,7 +21,7 @@ export default function SearchForm(props) {
   console.log(query.book, "<= query.book");
   console.log(query.chapter, "<= query.chapter");
 
-  const chapterArray = [];
+  const chapterArray = []; // has to be done this way insead of with state to prevent too many re-renders
   const bookObj = Chapters.find(({ book }) => book === query.book);
   if (bookObj) {
     console.log(bookObj.chapters, "<= bookObj.chapters");

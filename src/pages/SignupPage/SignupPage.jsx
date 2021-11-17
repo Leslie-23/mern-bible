@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import { useNavigate } from "react-router";
+import { useNavigate } from "react-router-dom";
 import userService from "../../utils/userService";
 
 export default function SignUpPage(props) {

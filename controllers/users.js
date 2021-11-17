@@ -2,11 +2,6 @@ const User = require("../models/user");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 
-module.exports = {
-  signup,
-  login,
-};
-
 async function signup(req, res) {
   console.log(req.body, "<= req.body");
   const user = new User(req.body);
@@ -17,7 +12,7 @@ async function signup(req, res) {
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email
-    console.log(err, "<= error in controller")
+    console.log(err, "<= error in controller");
     res.status(400).json(err);
   }
 }
@@ -41,8 +36,15 @@ async function login(req, res) {
 }
 
 const list = (req, res) => {
-  //find saved list belonging to user
-}
+  console.log(req.user);
+  return -1; //find saved list belonging to user
+};
+
+module.exports = {
+  signup,
+  login,
+  list,
+};
 
 /*----- Helper Functions -----*/
 

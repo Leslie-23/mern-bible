@@ -1,3 +1,3 @@
 export default function Saved(props) {
-  return <h1>Saved verses go here</h1>;
+  return <h1>My Saved Verses</h1>;
 }

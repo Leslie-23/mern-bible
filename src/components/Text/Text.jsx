@@ -30,11 +30,16 @@ export default function Text(props) {
     return versesObj;
   };
 
+  const handleClick = (v) => {
+    
+    console.log("click");
+  };
+
   const versesEntries = Object.entries(getVersesObj());
   const verseText = versesEntries.map((v, i) => {
     return (
-      <span key={i}>
-        <strong>{v[0]} </strong>
+      <span key={i} onClick={() => handleClick(v)}>
+        <strong>{v[1].verse} </strong>
         {v[1].text} &nbsp;
       </span>
     );

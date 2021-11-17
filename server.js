@@ -3,7 +3,6 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 const favicon = require('serve-favicon');
-const { default: Search } = require('./src/pages/Search/Search');
 
 require('./config/database');
 
