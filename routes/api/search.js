@@ -1,8 +1,7 @@
 const express = require("express");
 const router = express.Router();
-const searchCtrl = require("../../controllers/search");
+const savedCtrl = require("../../controllers/saved");
 
-router.post("/", searchCtrl.find);
-// router.post("/:book/:chapter", searchCtrl.add);
+router.post("/:book/:chapter", savedCtrl.add)
 
 module.exports = router;

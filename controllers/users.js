@@ -1,4 +1,5 @@
 const User = require("../models/user");
+const Saved = require("../models/saved");
 const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 
@@ -9,6 +10,9 @@ async function signup(req, res) {
   try {
     await user.save();
     const token = createJWT(user);
+    const savedList = new Saved();
+    savedList.user = user._id;
+    console.log(savedList);
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email

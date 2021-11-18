@@ -4,7 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
-import Search from "../Search/Search";
+import Search from "../Search/SearchPage";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import Saved from "../Saved/Saved";

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Chapters from "../../Fixtures/Chapters";
+import * as searchService from "../../utils/searchService";
 
 export default function SearchForm(props) {
   const [query, setQuery] = useState({
@@ -40,22 +41,27 @@ export default function SearchForm(props) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    props.getQueryObj(query);
     console.log("submitted");
+    props.getVersesObj(searchService.retrieve(query));
   };
 
   return (
     <div>
-      <form action="" onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <select name="book" id="" onChange={handleChange}>
-          <option value="book">book</option>
+          <option value="">Book</option>
           {bookList}
         </select>
         <select name="chapter" id="" onChange={handleChange}>
-          <option value="chapter">chapter</option>
+          <option value="chapter">Chapter</option>
           {chapterList}
         </select>
-        <button type="submit">Go</button>
+        <button
+          type="submit"
+          disabled={query.book === "" || query.chapter === null}
+        >
+          Go
+        </button>
       </form>
     </div>
   );
