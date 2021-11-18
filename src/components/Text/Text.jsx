@@ -1,49 +1,48 @@
-import { useEffect } from "react";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 export default function Text(props) {
-  const [dataForText, setDataForText] = useState({});
+  const [versesArray, setVersesArray] = useState([]);
   useEffect(() => {
     if (props.chapterMeta.results) {
-      setDataForText(props.chapterMeta.results[0]);
+      const dataForText = props.chapterMeta.results[0];
+      const versesEntries = Object.entries(
+        dataForText.verses.kjv[Number(dataForText.chapter_verse)]
+      );
+      setVersesArray(versesEntries);
+      console.log(versesEntries.length);
     } else {
-      return;
+      console.log("Nothing searched for yet");
     }
   }, [props.chapterMeta]);
 
-  console.log(dataForText);
-  // }, [props.chapterMeta.results]);
-  // props.chapterMeta.results !== undefined
-  //   ? console.log(props.chapterMeta.results[0])
-  //   : console.log("nothing");
-  // // setDataForText(props.chapterMeta.results);
+  const makeVersesText = (arr) => {
+    const versesSpans = arr.map((v, i) => {
+      return (
+        <span key={i} onClick={() => handleClick(v)}>
+          <strong>{v[1].verse} </strong>
+          {v[1].text} &nbsp;
+        </span>
+      );
+    });
+    return versesSpans;
+  };
 
-  // console.log(dataForText, "<= dataForText");
-
-  // const handleClick = (v) => {
-  //   console.log("click");
-  // };
-
-  // if (dataForText.verses) {
-  //   const versesEntries = Object.entries(dataForText.verses.kjv);
-  //   console.log(versesEntries, "<= versesEntries");
-  // }
-  //   const chapterText = versesEntries.map((v, i) => {
-  //     return (
-  //       <span key={i} onClick={() => handleClick(v)}>
-  //         <strong>{v[1].verse} </strong>
-  //         {v[1].text} &nbsp;
-  //       </span>
-  //     )
-  //   });
-  //   return <p>{verseText}</p>;
-  // } else {
-  //   return <p>Wait...</p>
-  // }
+  const handleClick = (v) => {
+    console.log("click");
+  };
+  
   return (
     <div>
-      <h1>{/* {dataForText.book_name} {dataForText.chapter_verse} */}</h1>
-      <p>{props.chapterMeta.results ? "Yes" : "ChapterText"}</p>
-      
+      {props.chapterMeta.results ? (
+        <>
+          <h1>
+            {props.chapterMeta.results[0].book_name}{" "}
+            {props.chapterMeta.results[0].chapter_verse}
+          </h1>
+          <p>{makeVersesText(versesArray)}</p>
+        </>
+      ) : (
+        <p>No</p>
+      )}
     </div>
   );
 }

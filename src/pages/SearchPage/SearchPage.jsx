@@ -4,8 +4,8 @@ import Text from "../../components/Text/Text";
 import { retrieve } from "../../utils/searchService";
 
 export default function SearchPage() {
-  const [chapterMeta, setChapterMeta] = useState({});
   const [queryObj, setQueryObj] = useState({});
+  const [chapterMeta, setChapterMeta] = useState({});
 
   const getQueryObj = (obj) => {
     setQueryObj(obj);
