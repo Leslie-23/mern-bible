@@ -1,6 +1,5 @@
 import { useState } from "react";
 import Chapters from "../../Fixtures/Chapters";
-import * as searchService from "../../utils/searchService";
 
 export default function SearchForm(props) {
   const [query, setQuery] = useState({
@@ -39,10 +38,11 @@ export default function SearchForm(props) {
     );
   });
 
+
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted");
-    props.getVersesObj(searchService.retrieve(query));
+    props.getQueryObj(query);
   };
 
   return (

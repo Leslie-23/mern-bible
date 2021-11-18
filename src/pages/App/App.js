@@ -4,7 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
-import Search from "../Search/SearchPage";
+import SearchPage from "../SearchPage/SearchPage";
 import Home from "../Home/Home";
 import Layout from "../Layout/Layout";
 import Saved from "../Saved/Saved";
@@ -28,7 +28,7 @@ function App() {
         element={<Layout user={user} handleLogout={handleLogout} />}
       >
         <Route index element={<Home />} />
-        <Route path="search" element={<Search />} />
+        <Route path="search" element={<SearchPage />} />
         <Route path="saved" element={<Saved />} />
         <Route
           path="login"
