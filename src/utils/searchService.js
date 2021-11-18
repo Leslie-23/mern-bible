@@ -12,4 +12,8 @@ const retrieve = async (queryObj) => {
   }
 };
 
-export { retrieve };
+const add = (verseObj) => {
+  console.log(verseObj, "<= triggered by click");
+}
+
+export { retrieve, add };

@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { add } from "../../utils/searchService";
 export default function Text(props) {
   const [versesArray, setVersesArray] = useState([]);
   useEffect(() => {
@@ -8,7 +9,6 @@ export default function Text(props) {
         dataForText.verses.kjv[Number(dataForText.chapter_verse)]
       );
       setVersesArray(versesEntries);
-      console.log(versesEntries.length);
     } else {
       console.log("Nothing searched for yet");
     }
@@ -27,9 +27,15 @@ export default function Text(props) {
   };
 
   const handleClick = (v) => {
+    add({
+      book: props.chapterMeta.results[0].book_name,
+      chapter: props.chapterMeta.results[0].chapter_verse,
+      verse: v[1].verse,
+      text: v[1].text,
+    });
     console.log("click");
   };
-  
+
   return (
     <div>
       {props.chapterMeta.results ? (
@@ -41,7 +47,7 @@ export default function Text(props) {
           <p>{makeVersesText(versesArray)}</p>
         </>
       ) : (
-        <p>No</p>
+        <p>Search for a Bible chapter</p>
       )}
     </div>
   );
