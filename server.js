@@ -9,7 +9,6 @@ require('./config/database');
 // Require controllers here
 
 const app = express();
-// const bodyParser = require("body-parser")
 
 // add in when the app is ready to be deployed
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));

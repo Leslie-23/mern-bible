@@ -5,7 +5,11 @@ const BASE_URL = "/api/search";
 const retrieve = async (queryObj) => {
   try {
     const dataObj = await fetch(
-      `https://api.biblesupersearch.com/api?bible=kjv&reference=${queryObj.book}%20${queryObj.chapter}`
+      `https://api.biblesupersearch.com/api?bible=kjv&reference=${queryObj.book}%20${queryObj.chapter}`,
+      {
+        method: "GET"
+      //   mode: "no-cors",
+      }
       // triggering fetch with handleSubmit prevents wasting an API call upon mount elsewhere
     );
     const resObj = await dataObj.json();
@@ -17,7 +21,7 @@ const retrieve = async (queryObj) => {
 };
 
 const add = async (verseObj) => {
-console.log(verseObj, "<= triggered by click");
+  console.log(verseObj, "<= triggered by click");
   await fetch(BASE_URL, {
     method: "POST",
     headers: {

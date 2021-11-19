@@ -7,12 +7,13 @@ async function signup(req, res) {
   console.log(req.body, "<= req.body");
   const user = new User(req.body);
   console.log(user, "<= new user");
+  const savedList = new Saved({user: user._id});
+  console.log(savedList, "<= user's savedList");
+  
   try {
     await user.save();
+    await savedList.save();
     const token = createJWT(user);
-    const savedList = new Saved();
-    savedList.user = user._id;
-    console.log(savedList, "<= user's savedList");
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email
