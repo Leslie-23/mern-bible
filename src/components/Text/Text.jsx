@@ -14,17 +14,14 @@ export default function Text(props) {
     }
   }, [props.chapterMeta]);
 
-  const makeVersesText = (arr) => {
-    const versesSpans = arr.map((v, i) => {
-      return (
-        <span key={i} onClick={() => handleClick(v)}>
-          <strong>{v[1].verse} </strong>
-          {v[1].text} &nbsp;
-        </span>
-      );
-    });
-    return versesSpans;
-  };
+  const versesSpans = versesArray.map((v, i) => {
+    return (
+      <span key={i} onClick={() => handleClick(v)}>
+        <strong>{v[1].verse} </strong>
+        {v[1].text} &nbsp;
+      </span>
+    );
+  });
 
   const handleClick = (v) => {
     add({
@@ -33,18 +30,17 @@ export default function Text(props) {
       verse: v[1].verse,
       text: v[1].text,
     });
-    console.log("click");
   };
 
   return (
     <div>
-      {props.chapterMeta.results ? (
+      {props.chapterMeta && props.chapterMeta.results ? (
         <>
           <h1>
             {props.chapterMeta.results[0].book_name}{" "}
             {props.chapterMeta.results[0].chapter_verse}
           </h1>
-          <p>{makeVersesText(versesArray)}</p>
+          <p>{versesSpans}</p>
         </>
       ) : (
         <p>Search for a Bible chapter</p>

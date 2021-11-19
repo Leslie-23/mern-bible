@@ -31,7 +31,7 @@ const Chapters = [
     { book: "Amos", chapters: 9 },
     { book: "Obadiah", chapters: 1 },
     { book: "Jonah", chapters: 4 },
-    { book: "Michah", chapters: 4 },
+    { book: "Micah", chapters: 4 },
     { book: "Nahum", chapters: 3 },
     { book: "Habakkuk", chapters: 3 },
     { book: "Zephaniah", chapters: 3 },

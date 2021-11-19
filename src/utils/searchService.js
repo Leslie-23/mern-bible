@@ -1,3 +1,7 @@
+import tokenService from "./tokenService";
+
+const BASE_URL = "/api/search";
+
 const retrieve = async (queryObj) => {
   try {
     const dataObj = await fetch(
@@ -12,8 +16,22 @@ const retrieve = async (queryObj) => {
   }
 };
 
-const add = (verseObj) => {
-  console.log(verseObj, "<= triggered by click");
-}
+const add = async (verseObj) => {
+console.log(verseObj, "<= triggered by click");
+  await fetch(BASE_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${tokenService.getToken()}`,
+    },
+    body: JSON.stringify(verseObj),
+  }).then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error("Must be logged in to add a verse");
+    }
+  });
+};
 
 export { retrieve, add };

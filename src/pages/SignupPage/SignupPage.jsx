@@ -7,7 +7,7 @@ export default function SignUpPage(props) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [fields, setFields] = useState({
-    name: "",
+    username: "",
     email: "",
     password: "",
     passwordConf: "",
@@ -38,9 +38,9 @@ export default function SignUpPage(props) {
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
-          name="name"
-          placeholder="name"
-          value={fields.name}
+          name="username"
+          placeholder="username"
+          value={fields.username}
           onChange={handleChange}
           required={true}
         />

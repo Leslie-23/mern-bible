@@ -12,7 +12,7 @@ async function signup(req, res) {
     const token = createJWT(user);
     const savedList = new Saved();
     savedList.user = user._id;
-    console.log(savedList);
+    console.log(savedList, "<= user's savedList");
     res.json({ token });
   } catch (err) {
     // Probably a duplicate email

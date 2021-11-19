@@ -8,7 +8,8 @@ export default function Header(props) {
       {props.user ? (
         <span>
           <a href="">
-            <button>{props.user.username.split(" ")[0][0]}</button>
+            {/* <button>{props.user.username.split(" ")[0][0]}</button> */}
+            <button>{props.user.username}</button>
           </a>
           &nbsp;
           <a href="/saved">My Saved Verses</a>
