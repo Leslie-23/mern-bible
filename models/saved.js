@@ -4,7 +4,7 @@ const verseSchema = new mongoose.Schema(
   {
     book: String,
     chapter: Number,
-    verseNo: String,
+    verse: Number,
     text: String,
   },
   {

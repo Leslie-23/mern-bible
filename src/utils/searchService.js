@@ -1,7 +1,5 @@
 import tokenService from "./tokenService";
 
-const BASE_URL = "/api/search";
-
 const retrieve = async (queryObj) => {
   try {
     const dataObj = await fetch(
@@ -22,7 +20,7 @@ const retrieve = async (queryObj) => {
 
 const add = async (verseObj) => {
   console.log(verseObj, "<= triggered by click");
-  await fetch(BASE_URL, {
+  await fetch("/api/search", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
