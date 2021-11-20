@@ -21,7 +21,7 @@ export default function SavedPage() {
   return (
     <div>
       <h1>My Saved Verses</h1>
-      <SavedVerseList verses={verses} />
+      <SavedVerseList verses={verses} setVerses={setVerses}/>
     </div>
   );
 }

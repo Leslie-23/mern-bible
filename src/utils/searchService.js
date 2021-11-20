@@ -5,8 +5,7 @@ const retrieve = async (queryObj) => {
     const dataObj = await fetch(
       `https://api.biblesupersearch.com/api?bible=kjv&reference=${queryObj.book}%20${queryObj.chapter}`,
       {
-        method: "GET"
-      //   mode: "no-cors",
+        method: "GET",
       }
       // triggering fetch with handleSubmit prevents wasting an API call upon mount elsewhere
     );
