@@ -1,7 +1,9 @@
+import { remove } from "../../utils/savedService";
+
 export default function SavedVerseList({ verses }) {
   console.log(verses, "<= my verses");
 
-  const handleDelete = (v) => {};
+  const handleDelete = (v) => {remove(v)};
 
   const verseList = verses.map((v, i) => {
     return (

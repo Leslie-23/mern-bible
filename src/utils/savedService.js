@@ -1,26 +1,35 @@
 import tokenService from "./tokenService";
 
-const BASE_URL = "/api/saved"
+const BASE_URL = "/api/saved";
 
-const index = () => {
-  return fetch(BASE_URL, {
-    method: "GET",
-    headers: { Authorization: `Bearer ${tokenService.getToken()}` },
-  }).then((res) => {
-    if (res.ok) {
-      console.log("ok")
-      return res.json();
-    } else {
-      throw new Error("Not logged in");
-    }
-  });
+const index = async () => {
+  try {
+    const res = await fetch(BASE_URL, {
+      method: "GET",
+      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+    });
+    // if (res.ok) {
+    console.log("ok");
+    return res.json();
+    // }
+  } catch (err) {
+    console.log(err);
+  }
 };
 
-const remove = (v) => {
-  return fetch(`${BASE_URL}/${v._id}`, {
-    method: "DELETE", 
-    headers: {Authorization: `Bearer ${tokenService.getToken()}`}
-  })
-}
+const remove = async (v) => {
+  try {
+    const res = await fetch(`${BASE_URL}/${v._id}`, {
+      method: "DELETE",
+      headers: { Authorization: `Bearer ${tokenService.getToken()}` },
+    });
+    // if (res.ok) {
+    console.log("ok");
+    return res.json();
+    // }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
-export { index };
+export { index, remove };
