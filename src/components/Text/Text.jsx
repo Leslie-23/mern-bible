@@ -1,10 +1,10 @@
 import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
-export default function Text(props) {
+export default function Text({ chapterMeta }) {
   const [versesArray, setVersesArray] = useState([]);
   useEffect(() => {
-    if (props.chapterMeta && props.chapterMeta.results) {
-      const dataForText = props.chapterMeta.results[0];
+    if (chapterMeta && chapterMeta.results) {
+      const dataForText = chapterMeta.results[0];
       const versesEntries = Object.entries(
         dataForText.verses.kjv[Number(dataForText.chapter_verse)]
       );
@@ -12,7 +12,7 @@ export default function Text(props) {
     } else {
       console.log("Nothing searched for yet");
     }
-  }, [props.chapterMeta]);
+  }, [chapterMeta]);
 
   const versesSpans = versesArray.map((v, i) => {
     return (
@@ -25,8 +25,8 @@ export default function Text(props) {
 
   const handleClick = (v) => {
     add({
-      book: props.chapterMeta.results[0].book_name,
-      chapter: Number(props.chapterMeta.results[0].chapter_verse),
+      book: chapterMeta.results[0].book_name,
+      chapter: Number(chapterMeta.results[0].chapter_verse),
       verse: v[1].verse,
       text: v[1].text,
     });
@@ -34,11 +34,11 @@ export default function Text(props) {
 
   return (
     <div>
-      {props.chapterMeta && props.chapterMeta.results ? (
+      {chapterMeta && chapterMeta.results ? (
         <>
           <h1>
-            {props.chapterMeta.results[0].book_name}{" "}
-            {props.chapterMeta.results[0].chapter_verse}
+            {chapterMeta.results[0].book_name}{" "}
+            {chapterMeta.results[0].chapter_verse}
           </h1>
           <p>{versesSpans}</p>
         </>

@@ -4,7 +4,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import userService from "../../utils/userService";
 import "./LoginPage.css";
 
-export default function LoginPage(props) {
+export default function LoginPage({ handleSignupOrLogin }) {
   const [error, setError] = useState("");
   const [fields, setFields] = useState({
     email: "",
@@ -24,7 +24,7 @@ export default function LoginPage(props) {
     e.preventDefault();
     try {
       await userService.login(fields);
-      props.handleSignupOrLogin();
+      handleSignupOrLogin();
       navigate("/search");
     } catch (err) {
       setError(err.message);
@@ -53,7 +53,9 @@ export default function LoginPage(props) {
         />
         <button type="submit">Log In</button>
       </form>
-      <p>No Account? <a href="/signup">Sign up</a></p>
+      <p>
+        No Account? <a href="/signup">Sign up</a>
+      </p>
       <p>{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
   );

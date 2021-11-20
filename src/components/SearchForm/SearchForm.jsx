@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Chapters from "../../Fixtures/Chapters";
 
-export default function SearchForm(props) {
+export default function SearchForm({ getQueryObj }) {
   const [query, setQuery] = useState({
     book: "",
     chapter: null,
@@ -38,11 +38,10 @@ export default function SearchForm(props) {
     );
   });
 
-
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log("submitted");
-    props.getQueryObj(query);
+    getQueryObj(query);
   };
 
   return (

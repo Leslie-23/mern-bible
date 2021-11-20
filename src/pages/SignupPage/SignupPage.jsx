@@ -3,7 +3,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { useNavigate } from "react-router-dom";
 import userService from "../../utils/userService";
 
-export default function SignUpPage(props) {
+export default function SignUpPage({ handleSignupOrLogin }) {
   const navigate = useNavigate();
   const [error, setError] = useState("");
   const [fields, setFields] = useState({
@@ -22,10 +22,10 @@ export default function SignUpPage(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     try {
-      await userService.signup(fields)
-      props.handleSignupOrLogin();
+      await userService.signup(fields);
+      handleSignupOrLogin();
       navigate("/search");
     } catch (err) {
       setError(err.message);

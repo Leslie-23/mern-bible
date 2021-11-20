@@ -1,12 +1,13 @@
 import { React, useState } from "react";
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import Protected from "../../components/Protected/Protected";
+import Home from "../Home/Home";
+import Layout from "../Layout/Layout";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import userService from "../../utils/userService";
 import SearchPage from "../SearchPage/SearchPage";
-import Home from "../Home/Home";
-import Layout from "../Layout/Layout";
 import SavedPage from "../SavedPage/SavedPage";
 
 function App() {
@@ -29,7 +30,14 @@ function App() {
       >
         <Route index element={<Home />} />
         <Route path="search" element={<SearchPage />} />
-        <Route path="saved" element={<SavedPage />} />
+        <Route
+          path="saved"
+          element={
+            <Protected user={user}>
+              <SavedPage />
+            </Protected>
+          }
+        />
         <Route
           path="login"
           element={<LoginPage handleSignupOrLogin={handleSignupOrLogin} />}

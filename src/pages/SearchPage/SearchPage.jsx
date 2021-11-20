@@ -12,7 +12,7 @@ export default function SearchPage() {
   };
 
   useEffect(() => {
-    if (queryObj.book !== undefined && queryObj.chapter !== undefined) {
+    if (queryObj && queryObj.book && queryObj.chapter) {
       // if statement prevents wasting an API call upon mount or refresh
       retrieve(queryObj).then((data) => setChapterMeta(data));
     }

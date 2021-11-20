@@ -12,7 +12,7 @@ export default function SavedPage() {
     try {
       const versesObj = await index();
       console.log(versesObj);
-      setVerses([...versesObj.verses]);
+      setVerses(versesObj.verses);
     } catch (err) {
       console.log(err);
     }
@@ -21,7 +21,7 @@ export default function SavedPage() {
   return (
     <div>
       <h1>My Saved Verses</h1>
-      <SavedVerseList verses={verses} setVerses={setVerses}/>
+      <SavedVerseList verses={verses} setVerses={setVerses} />
     </div>
   );
 }
