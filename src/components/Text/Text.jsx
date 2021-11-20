@@ -40,7 +40,7 @@ export default function Text({ chapterMeta }) {
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>
-          <p>{versesSpans}</p>
+          <div class="text-white">{versesSpans}</div>
         </>
       ) : (
         <p>Search for a Bible chapter</p>

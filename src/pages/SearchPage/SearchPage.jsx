@@ -21,8 +21,8 @@ export default function SearchPage() {
   console.log(chapterMeta, "<= chapterMeta");
 
   return (
-    <div>
-      <h1>Search</h1>
+    <div class="bg-black">
+      <h1 class="text-xl">Search</h1>
       <SearchForm getQueryObj={getQueryObj} />
       <Text chapterMeta={chapterMeta} />
     </div>
