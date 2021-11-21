@@ -3,7 +3,7 @@ import Header from "../../components/Header/Header";
 
 export default function Layout({user, handleLogout}) {
     return(
-        <div class="bg-red-500">
+        <div>
             <Header user={user} handleLogout={handleLogout}/>
             <Outlet />
         </div>

@@ -33,13 +33,13 @@ export default function SignUpPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div>
+    <div class="bg-primary">
       <h1>Sign up Page</h1>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
-          placeholder="username"
+          placeholder="Username"
           value={fields.username}
           onChange={handleChange}
           required={true}
@@ -47,7 +47,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
         <input
           type="email"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           value={fields.email}
           onChange={handleChange}
           required={true}
@@ -55,7 +55,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           value={fields.password}
           onChange={handleChange}
           required={true}
@@ -63,7 +63,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
         <input
           type="password"
           name="passwordConf"
-          placeholder="confirm cassword"
+          placeholder="Confirm password"
           value={fields.passwordConf}
           onChange={handleChange}
           required={true}

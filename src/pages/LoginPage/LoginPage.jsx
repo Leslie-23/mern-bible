@@ -32,29 +32,36 @@ export default function LoginPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div>
+    <div class="bg-primary text-center font-theme">
       <h1>Log In</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
           name="email"
-          placeholder="email"
+          placeholder="Email"
           value={fields.email}
           onChange={handleChange}
           required={true}
+          class="mt-4"
         />
+        <br />
         <input
           type="password"
           name="password"
-          placeholder="password"
+          placeholder="Password"
           value={fields.password}
           onChange={handleChange}
           required={true}
+          class="mt-4"
         />
-        <button type="submit">Log In</button>
+        <br />
+        <button type="submit" class="my-4">Log in</button>
       </form>
       <p>
-        No Account? <a href="/signup">Sign up</a>
+        No account?{" "}
+        <button>
+          <a href="/signup">Sign up</a>
+        </button>
       </p>
       <p>{error ? <ErrorMessage error={error} /> : null}</p>
     </div>

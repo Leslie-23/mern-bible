@@ -1,32 +1,32 @@
+import NavDropdown from "../NavDropdown/NavDropdown"
+
 export default function Header({ user, handleLogout }) {
   return (
-    <nav class="text-2xl text-white bg-black">
-      <a href="/" class="flex self-auto">Home</a>
-      &nbsp;
-      <a href="/search">Start Reading</a>
-      &nbsp;
-      <span class="float-right">
+    <nav class="grid grid-cols-3 text-2xl text-black bg-primary font-theme font-bold">
+      <div>
+        <button class="ml-4 my-4">
+          <a href="/search" class="float-left">
+            Start Reading
+          </a>
+        </button>
+      </div>
+      <div class=" flex flex-grow justify-center my-4">
+        <a href="/">Home</a>
+      </div>
+      <div class="my-4">
         {user ? (
-          <span>
-            <a href="">
-              {/* <button>{user.username.split(" ")[0][0]}</button> */}
-              <button>{user.username}</button>
-            </a>
-            &nbsp;
-            <a href="/saved">My Saved Verses</a>
-            &nbsp;
-            <a href="/logout" onClick={handleLogout}>
-              Log Out
-            </a>
-          </span>
+            <NavDropdown user={user} handleLogout={handleLogout}/>
         ) : (
-          <span>
-            <a href="/login">Log In</a>
-            &nbsp;
-            <a href="/signup">Sign Up</a>
-          </span>
+          <div class="flex justify-end">
+            <button class="mr-4">
+              <a href="/login">Log In</a>
+            </button>
+            <button class="mr-4">
+              <a href="/signup">Sign Up</a>
+            </button>
+          </div>
         )}
-      </span>
+      </div>
     </nav>
   );
 }
