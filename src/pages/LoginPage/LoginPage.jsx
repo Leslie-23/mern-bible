@@ -32,8 +32,8 @@ export default function LoginPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div class="bg-primary text-center font-theme">
-      <h1>Log In</h1>
+    <div className="bg-primary text-center text-2xl font-theme">
+      <h1 className="text-3xl">Log In</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -42,7 +42,7 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
-          class="mt-4"
+          className="mt-4 border-2 border-black rounded"
         />
         <br />
         <input
@@ -52,15 +52,15 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
-          class="mt-4"
+          className="mt-4 border-2 border-black rounded"
         />
         <br />
-        <button type="submit" class="my-4">Log in</button>
+        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Log in</button>
       </form>
       <p>
         No account?{" "}
         <button>
-          <a href="/signup">Sign up</a>
+          <a href="/signup" className="underline">Sign up</a>
         </button>
       </p>
       <p>{error ? <ErrorMessage error={error} /> : null}</p>

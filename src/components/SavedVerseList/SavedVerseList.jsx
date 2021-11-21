@@ -3,7 +3,7 @@ import { remove } from "../../utils/savedService";
 export default function SavedVerseList({ verses, setVerses }) {
   console.log(verses, "<= my verses");
 
-  const handleDelete = (v) => {
+  const handleRemove = (v) => {
     remove(v);
     let tempArray = verses.filter((verse) => verse !== v);
     console.log(tempArray);
@@ -13,11 +13,12 @@ export default function SavedVerseList({ verses, setVerses }) {
 
   const verseList = verses.map((v, i) => {
     return (
-      <div key={i} onClick={() => handleDelete(v)}>
-        <h1>
+      <div key={i} onDoubleClick={() => handleRemove(v)}>
+        <h1 className="text-2xl">
           {v.book} {v.chapter}: {v.verse}
         </h1>
         <p>{v.text}</p>
+        <br/>
       </div>
     );
   });

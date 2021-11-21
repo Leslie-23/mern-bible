@@ -45,18 +45,18 @@ export default function SearchForm({ getQueryObj }) {
   };
 
   return (
-    <div class="flex justify-center">
+    <div className="flex justify-center font-vesper-libre">
       <form onSubmit={handleSubmit}>
-        <select name="book" id="" onChange={handleChange} class="mr-8">
+        <select name="book" id="" onChange={handleChange} className="mr-8 bg-primary border-2 border-black rounded font-theme">
           <option value="">Book</option>
           {bookList}
         </select>
-        <select name="chapter" id="" onChange={handleChange} class="mr-8">
-          <option value="chapter">Chapter</option>
+        <select name="chapter" id="" onChange={handleChange} className="mr-8 bg-primary border-2 border-black rounded font-theme">
+          <option value="">Chapter</option>
           {chapterList}
         </select>
         <button
-          class="bg-white px-4"
+          className="bg-primary px-4 py-1 border-2 border-black rounded-full font-theme"
           type="submit"
           disabled={query.book === "" || query.chapter === null}
         >

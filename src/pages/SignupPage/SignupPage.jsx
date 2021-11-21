@@ -33,8 +33,8 @@ export default function SignUpPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div class="bg-primary">
-      <h1>Sign up Page</h1>
+    <div className="bg-primary text-center text-2xl font-theme">
+      <h1 className="text-3xl">Sign Up</h1>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -43,7 +43,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.username}
           onChange={handleChange}
           required={true}
+          className="mt-4 border-2 border-black rounded"
         />
+        <br/>
         <input
           type="email"
           name="email"
@@ -51,7 +53,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
+          className="mt-4 border-2 border-black rounded"
         />
+        <br/>
         <input
           type="password"
           name="password"
@@ -59,7 +63,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
+          className="mt-4 border-2 border-black rounded"
         />
+        <br/>
         <input
           type="password"
           name="passwordConf"
@@ -67,10 +73,12 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.passwordConf}
           onChange={handleChange}
           required={true}
+          className="mt-4 border-2 border-black rounded"
         />
-        <button type="submit">Sign Up</button>
+        <br/>
+        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Sign Up</button>
       </form>
-      <p>{error ? <ErrorMessage error={error} /> : null}</p>
+      <p className="mt-4">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
   );
 }

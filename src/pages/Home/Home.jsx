@@ -1,19 +1,27 @@
 export default function Home() {
   return (
-    <div class="bg-primary flex text-center flex-col">
-      <h1 class="text-center text-2xl font-theme font-black">The MERN Bible</h1>
-      <h2>
+    <div className="bg-primary flex text-center flex-col font-theme text-2xl">
+      <h1 className="text-center text-4xl text-theme-dark font-theme font-black">
+        The MERN Bible
+      </h1>
+      <br />
+      <h2 className="text-2xl">
         A King James Version Bible reference powered by the{" "}
-        <a href="https://api.biblesupersearch.com/">Bible SuperSearch API</a>
+        <a href="https://api.biblesupersearch.com/" className="underline">
+          Bible SuperSearch API
+        </a>
       </h2>
-      <button class="p-0 border-2 border-black">
-        <a href="/search">Start Reading</a>
-      </button>
-      <h1>What does 'MERN' stand for?</h1>
+      <br/>
+      <a href="/search" className="p-0 underline">
+        Start Reading
+      </a>
+      <br />
+      <br />
+      <h1>What does "MERN" stand for?</h1>
       <h2>
         MERN is the acronym for the tech stack used to create this application:
       </h2>
-      <ul>
+      <ul className="underline">
         <li>
           <a href="https://www.mongodb.com/">MongoDB</a>
         </li>

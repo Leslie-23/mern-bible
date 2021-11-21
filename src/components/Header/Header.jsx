@@ -1,29 +1,27 @@
-import NavDropdown from "../NavDropdown/NavDropdown"
+import NavDropdown from "../NavDropdown/NavDropdown";
 
 export default function Header({ user, handleLogout }) {
   return (
-    <nav class="grid grid-cols-3 text-2xl text-black bg-primary font-theme font-bold">
+    <nav className="p-4 grid grid-cols-3 text-2xl text-black bg-primary font-theme">
       <div>
-        <button class="ml-4 my-4">
-          <a href="/search" class="float-left">
-            Start Reading
-          </a>
-        </button>
+        <a href="/search" className="float-left my-4 underline">
+          Start Reading
+        </a>
       </div>
-      <div class=" flex flex-grow justify-center my-4">
+      <div className=" flex justify-center my-4">
         <a href="/">Home</a>
       </div>
-      <div class="my-4">
+      <div className="my-4">
         {user ? (
-            <NavDropdown user={user} handleLogout={handleLogout}/>
+          <NavDropdown user={user} handleLogout={handleLogout} />
         ) : (
-          <div class="flex justify-end">
-            <button class="mr-4">
-              <a href="/login">Log In</a>
-            </button>
-            <button class="mr-4">
-              <a href="/signup">Sign Up</a>
-            </button>
+          <div className="flex justify-end">
+            <a href="/login" className="mr-4 underline">
+              Log In
+            </a>
+            <a href="/signup" className="underline">
+              Sign Up
+            </a>
           </div>
         )}
       </div>
