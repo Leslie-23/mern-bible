@@ -1,5 +1,5 @@
 ### Logo goes here
-# The Mern Bible
+# The MERN Bible
 ### A King James Version Bible reference powered by the [Bible SuperSearch API](https://api.biblesupersearch.com/)
 ## Screenshots
 ## Technologies Used
