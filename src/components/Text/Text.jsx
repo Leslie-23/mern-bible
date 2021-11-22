@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
 export default function Text({ chapterMeta }) {
   const [versesArray, setVersesArray] = useState([]);
-  const [addMode, setAddMode] = useState(false);
+  const [addMode, toggleAddMode] = useState(false);
   useEffect(() => {
     if (chapterMeta && chapterMeta.results) {
       const dataForText = chapterMeta.results[0];
@@ -30,7 +30,7 @@ export default function Text({ chapterMeta }) {
         )}
         <span
           key={i}
-          onClick={() => setAddMode(!addMode)}
+          onClick={() => toggleAddMode(!addMode)}
           className="transition in-expo duration-150 hover:bg-theme-light"
         >
           <strong>{v[1].verse} </strong>
