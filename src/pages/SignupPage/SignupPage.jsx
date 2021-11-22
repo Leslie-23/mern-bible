@@ -76,7 +76,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br/>
-        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Sign Up</button>
+        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Sign up</button>
       </form>
       <p className="mt-4">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
