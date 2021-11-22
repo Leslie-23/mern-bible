@@ -3,7 +3,7 @@ const Saved = require("../models/saved");
 const list = async (req, res) => {
   try {
     const userSavedList = await Saved.findOne({ user: req.user._id });
-    console.log(userSavedList.verses, "<= userSavedList.verses"); // working
+    // console.log(userSavedList.verses, "<= userSavedList.verses"); // working
     res.status(200).json({ verses: userSavedList.verses });
   } catch (err) {
     res.status(400).json({ err });
@@ -23,7 +23,7 @@ const add = async (req, res) => {
 
 const remove = async (req, res) => {
   try {
-    console.log(req.user);
+    // console.log(req.user);
     const userSavedList = await Saved.findOne({ user: req.user._id });
     const verseToDelete = userSavedList.verses.find(
       ({ _id }) => String(_id) === req.params.id
@@ -31,7 +31,6 @@ const remove = async (req, res) => {
     const index = userSavedList.verses.indexOf(verseToDelete);
     userSavedList.verses.splice(index, 1);
     await userSavedList.save();
-    // res.redirect("/saved");
     res.json({ status: 200 });
   } catch (err) {
     console.log(err);

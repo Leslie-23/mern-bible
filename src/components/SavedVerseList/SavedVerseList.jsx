@@ -19,7 +19,7 @@ export default function SavedVerseList({ verses, setVerses }) {
       <>
         {removeMode ? (
           <button
-            className="text-primary bg-theme-dark w-6 h-6 rounded-full"
+            className="text-primary bg-theme-dark w-6 h-6 rounded-full transition ease-in-out hover:bg-theme-light"
             onClick={() => handleRemove(v)}
           >
             -
@@ -38,7 +38,7 @@ export default function SavedVerseList({ verses, setVerses }) {
           <p className="text-xl">{v.text}</p>
         </div>
         <br />
-        <br/>
+        <br />
       </>
     );
   });

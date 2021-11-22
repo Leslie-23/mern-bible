@@ -15,7 +15,7 @@ function signup(user) {
         console.log(
           "if you have an error, you must check your server terminal!"
         );
-        throw new Error("Email already taken!")
+        throw new Error("Email already taken!");
       })
       // Parameter destructuring!
       .then(({ token }) => tokenService.setToken(token))

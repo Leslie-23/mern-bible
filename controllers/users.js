@@ -4,12 +4,9 @@ const jwt = require("jsonwebtoken");
 const SECRET = process.env.SECRET;
 
 async function signup(req, res) {
-  console.log(req.body, "<= req.body");
   const user = new User(req.body);
-  console.log(user, "<= new user");
-  const savedList = new Saved({user: user._id});
-  console.log(savedList, "<= user's savedList");
-  
+  const savedList = new Saved({ user: user._id }); // makes a Saved list for the new user upon sign-up
+
   try {
     await user.save();
     await savedList.save();
@@ -40,15 +37,9 @@ async function login(req, res) {
   }
 }
 
-const list = (req, res) => {
-  console.log(req.user);
-  return -1; //find saved list belonging to user
-};
-
 module.exports = {
   signup,
   login,
-  list,
 };
 
 /*----- Helper Functions -----*/

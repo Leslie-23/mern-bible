@@ -8,10 +8,8 @@ const index = async () => {
       method: "GET",
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     });
-    // if (res.ok) {
     console.log("ok");
     return res.json();
-    // }
   } catch (err) {
     console.log(err);
   }
@@ -23,10 +21,8 @@ const remove = async (v) => {
       method: "DELETE",
       headers: { Authorization: `Bearer ${tokenService.getToken()}` },
     });
-    // if (res.ok) {
     console.log("ok");
     return res.json();
-    // }
   } catch (err) {
     console.log(err);
   }

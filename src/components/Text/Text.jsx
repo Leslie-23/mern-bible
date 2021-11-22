@@ -20,7 +20,7 @@ export default function Text({ chapterMeta }) {
       <>
         {addMode ? (
           <button
-            className="text-primary bg-theme-dark w-6 h-6 rounded-full"
+            className="text-primary bg-theme-dark w-6 h-6 rounded-full hover:bg-theme-light"
             onClick={() => handleAdd(v)}
           >
             +
