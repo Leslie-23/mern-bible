@@ -20,7 +20,7 @@ export default function SavedPage() {
 
   return (
     <div>
-      <h1 className="text-3xl text-center">My Saved Verses</h1>
+      <h1 className="text-3xl text-center font-bold">My Saved Verses</h1>
       <br/>
       <SavedVerseList verses={verses} setVerses={setVerses} />
     </div>

@@ -34,7 +34,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
 
   return (
     <div className="bg-primary text-center text-2xl font-theme">
-      <h1 className="text-3xl">Sign Up</h1>
+      <h1 className="text-3xl font-bold">Sign Up</h1>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"

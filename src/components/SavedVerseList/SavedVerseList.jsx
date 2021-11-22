@@ -30,10 +30,10 @@ export default function SavedVerseList({ verses, setVerses }) {
           )}
           <div
             key={i}
-            className="inline-block transition in-expo duration-150 hover:bg-theme-light"
+            className="transition in-expo duration-150 rounded hover:bg-theme-light"
             onClick={() => toggleRemoveMode(!removeMode)}
           >
-            <h1 className="text-2xl">
+            <h1 className="inline-flex text-2xl font-bold">
               {v.book} {v.chapter}:{v.verse}
             </h1>
             <p className="text-xl">{v.text}</p>

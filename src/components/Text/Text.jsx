@@ -31,7 +31,7 @@ export default function Text({ chapterMeta }) {
         <span
           key={i}
           onClick={() => toggleAddMode(!addMode)}
-          className="transition in-expo duration-150 hover:bg-theme-light"
+          className="transition in-expo duration-150 rounded hover:bg-theme-light"
         >
           <strong>{v[1].verse} </strong>
           {v[1].text} &nbsp;
@@ -54,7 +54,7 @@ export default function Text({ chapterMeta }) {
       <br />
       {chapterMeta && chapterMeta.results ? (
         <>
-          <h1 className="text-2xl">
+          <h1 className="text-2xl font-bold">
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>

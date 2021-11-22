@@ -12,7 +12,7 @@ export default function Home() {
         </a>
       </h2>
       <br/>
-      <a href="/search" className="p-0 underline">
+      <a href="/search" className="underline">
         Start Reading
       </a>
       <br />
