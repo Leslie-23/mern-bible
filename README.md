@@ -9,8 +9,10 @@
 - Node
 - TailwindCSS
 - HeadlessUI
+- Browser testing done in Microsoft Edge
 
 ## Planning
+[Trello board](https://trello.com/b/4Mi5b7wl/mern-bible)
 
 ## Logo
 The logo was made using the [Inkscape](https://inkscape.org/) vector graphics software.
