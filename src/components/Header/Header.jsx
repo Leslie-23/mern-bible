@@ -2,16 +2,17 @@ import NavDropdown from "../NavDropdown/NavDropdown";
 
 export default function Header({ user, handleLogout }) {
   return (
-    <nav className="p-4 grid grid-cols-3 text-2xl text-black bg-primary font-theme">
+    <>
+    <nav className="grid grid-cols-3 text-2xl text-black bg-primary font-theme">
       <div>
-        <a href="/search" className="float-left my-4 underline">
+        <a href="/search" className="flex justify-start items-center underline">
           Start Reading
         </a>
       </div>
-      <div className=" flex justify-center my-4">
+      <div className=" flex justify-center items-center">
         <a href="/">Home</a>
       </div>
-      <div className="my-4">
+      <div className="flex items-center">
         {user ? (
           <NavDropdown user={user} handleLogout={handleLogout} />
         ) : (
@@ -26,5 +27,8 @@ export default function Header({ user, handleLogout }) {
         )}
       </div>
     </nav>
+    <br/>
+    <br/>
+    </>
   );
 }

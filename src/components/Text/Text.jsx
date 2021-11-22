@@ -38,19 +38,22 @@ export default function Text({ chapterMeta }) {
   };
 
   return (
-    <div class="text-left font-theme px-4">
-      <br/>
+    <div className="text-left font-theme px-4">
+      <br />
       {chapterMeta && chapterMeta.results ? (
         <>
           <h1 className="text-2xl">
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>
-          <br/>
-          <div class="text-black">{versesSpans}</div>
+          <br />
+          <div className="text-black text-xl">{versesSpans}</div>
         </>
       ) : (
-        <p className="text-center">Chapter text will appear shortly after clicking "Go". <br/>If nothing happens, refresh the page and try again.</p>
+        <p className="text-center text-xl">
+          Chapter text will appear shortly after clicking "Go". <br />
+          If nothing happens, refresh the page and try again.
+        </p>
       )}
     </div>
   );

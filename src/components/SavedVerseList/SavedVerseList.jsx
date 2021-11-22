@@ -15,9 +15,9 @@ export default function SavedVerseList({ verses, setVerses }) {
     return (
       <div key={i} onDoubleClick={() => handleRemove(v)}>
         <h1 className="text-2xl">
-          {v.book} {v.chapter}: {v.verse}
+          {v.book} {v.chapter}:{v.verse}
         </h1>
-        <p>{v.text}</p>
+        <p className="text-xl">{v.text}</p>
         <br/>
       </div>
     );
