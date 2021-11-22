@@ -20,7 +20,7 @@ export default function Text({ chapterMeta }) {
       <>
         {addMode ? (
           <button
-            className="text-primary bg-theme-dark w-6 h-6 rounded-full hover:bg-theme-light"
+            className="text-primary bg-theme-dark w-6 h-6 rounded-full transition in-expo duration-150 hover:bg-theme-light"
             onClick={() => handleAdd(v)}
           >
             +
@@ -31,7 +31,7 @@ export default function Text({ chapterMeta }) {
         <span
           key={i}
           onClick={() => setAddMode(!addMode)}
-          className="hover:bg-theme-light"
+          className="transition in-expo duration-150 hover:bg-theme-light"
         >
           <strong>{v[1].verse} </strong>
           {v[1].text} &nbsp;

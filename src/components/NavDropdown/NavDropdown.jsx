@@ -4,13 +4,13 @@ export default function NavDropdown({ user, handleLogout }) {
   return (
     <Menu
       as="div"
-      className="absolute right-4 top-4 bg-primary-dark flex flex-col justify-end"
+      className="absolute right-4 top-4 bg-primary flex flex-col justify-end"
     >
       {({ open }) => (
         <>
           <Menu.Button
             as="button"
-            className="w-12 h-12 pt-1 border-2 border-black rounded-full"
+            className="w-12 h-12 pt-1 text-theme-dark border-4 border-theme-dark rounded-full"
           >
             {user.username.split(" ")[0][0]}
           </Menu.Button>

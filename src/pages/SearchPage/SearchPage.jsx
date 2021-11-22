@@ -22,7 +22,7 @@ export default function SearchPage() {
 
   return (
     <div className="bg-primary text-center">
-      <h1 className="font-theme text-3xl">Search for a Bible chapter</h1>
+      <h1 className="font-theme text-3xl">Search for a Bible Chapter</h1>
       <br />
       <SearchForm getQueryObj={getQueryObj} />
       <Text chapterMeta={chapterMeta} />

@@ -5,8 +5,8 @@ module.exports = {
     extend: {
       colors: {
         primary: "#EDEACE",
-        "theme-light": "#CEB2D1",
-        "theme-dark": "#7D6180",
+        "theme-light": "#F58888",
+        "theme-dark": "#760A0A",
       },
       fontFamily: {
         theme: ["'Vesper Libre'", "cursive"],

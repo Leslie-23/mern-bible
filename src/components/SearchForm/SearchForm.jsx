@@ -47,11 +47,21 @@ export default function SearchForm({ getQueryObj }) {
   return (
     <div className="flex justify-center font-vesper-libre">
       <form onSubmit={handleSubmit}>
-        <select name="book" id="" onChange={handleChange} className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl">
+        <select
+          name="book"
+          id=""
+          onChange={handleChange}
+          className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl focus:outline-none"
+        >
           <option value="">Book</option>
           {bookList}
         </select>
-        <select name="chapter" id="" onChange={handleChange} className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl">
+        <select
+          name="chapter"
+          id=""
+          onChange={handleChange}
+          className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl focus:outline-none"
+        >
           <option value="">Chapter</option>
           {chapterList}
         </select>

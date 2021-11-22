@@ -43,7 +43,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.username}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br/>
         <input
@@ -53,7 +53,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br/>
         <input
@@ -63,7 +63,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br/>
         <input
@@ -73,7 +73,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.passwordConf}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br/>
         <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Sign Up</button>

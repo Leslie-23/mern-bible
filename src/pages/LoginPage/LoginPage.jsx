@@ -42,7 +42,7 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br />
         <input
@@ -52,15 +52,22 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded"
+          className="mt-4 border-2 border-black rounded focus:outline-none"
         />
         <br />
-        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Log in</button>
+        <button
+          type="submit"
+          className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full"
+        >
+          Log in
+        </button>
       </form>
       <p>
         No account?{" "}
         <button>
-          <a href="/signup" className="underline">Sign up</a>
+          <a href="/signup" className="underline">
+            Sign up
+          </a>
         </button>
       </p>
       <p>{error ? <ErrorMessage error={error} /> : null}</p>
