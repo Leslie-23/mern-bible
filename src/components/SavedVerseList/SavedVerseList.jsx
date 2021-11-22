@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { remove } from "../../utils/savedService";
 
 export default function SavedVerseList({ verses, setVerses }) {
+  const [removeMode, toggleRemoveMode] = useState(false);
+
   console.log(verses, "<= my verses");
 
   const handleRemove = (v) => {
@@ -13,13 +16,30 @@ export default function SavedVerseList({ verses, setVerses }) {
 
   const verseList = verses.map((v, i) => {
     return (
-      <div key={i} onDoubleClick={() => handleRemove(v)}>
-        <h1 className="text-2xl">
-          {v.book} {v.chapter}:{v.verse}
-        </h1>
-        <p className="text-xl">{v.text}</p>
+      <>
+        {removeMode ? (
+          <button
+            className="text-primary bg-theme-dark w-6 h-6 rounded-full"
+            onClick={() => handleRemove(v)}
+          >
+            -
+          </button>
+        ) : (
+          ""
+        )}
+        <div
+          key={i}
+          className="inline-block hover:bg-theme-light"
+          onClick={() => toggleRemoveMode(!removeMode)}
+        >
+          <h1 className="text-2xl">
+            {v.book} {v.chapter}:{v.verse}
+          </h1>
+          <p className="text-xl">{v.text}</p>
+        </div>
+        <br />
         <br/>
-      </div>
+      </>
     );
   });
   return <div>{verseList}</div>;

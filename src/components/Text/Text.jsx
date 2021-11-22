@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
 export default function Text({ chapterMeta }) {
   const [versesArray, setVersesArray] = useState([]);
-  const [selected, setSelected] = useState(false);
+  const [addMode, setAddMode] = useState(false);
   useEffect(() => {
     if (chapterMeta && chapterMeta.results) {
       const dataForText = chapterMeta.results[0];
@@ -17,14 +17,26 @@ export default function Text({ chapterMeta }) {
 
   const versesSpans = versesArray.map((v, i) => {
     return (
-      <span
-        key={i}
-        onDoubleClick={() => handleAdd(v)}
-        className="hover:bg-theme-light"
-      >
-        <strong>{v[1].verse} </strong>
-        {v[1].text} &nbsp;
-      </span>
+      <>
+        {addMode ? (
+          <button
+            className="text-primary bg-theme-dark w-6 h-6 rounded-full"
+            onClick={() => handleAdd(v)}
+          >
+            +
+          </button>
+        ) : (
+          ""
+        )}
+        <span
+          key={i}
+          onClick={() => setAddMode(!addMode)}
+          className="hover:bg-theme-light"
+        >
+          <strong>{v[1].verse} </strong>
+          {v[1].text} &nbsp;
+        </span>
+      </>
     );
   });
 
