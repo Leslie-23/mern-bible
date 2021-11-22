@@ -12,7 +12,10 @@
 - Browser testing done in Microsoft Edge
 
 ## Planning
-[Trello board](https://trello.com/b/4Mi5b7wl/mern-bible)
+### Trello Board
+[Trello](https://trello.com/b/4Mi5b7wl/mern-bible)
+### ERD
+![ERD](https://i.imgur.com/8ZCZJUF.png)
 
 ## Logo
 The logo was made using the [Inkscape](https://inkscape.org/) vector graphics software.
