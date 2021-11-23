@@ -2,6 +2,11 @@
 # The MERN Bible
 ### A King James Version Bible reference powered by the [Bible SuperSearch API](https://api.biblesupersearch.com/)
 ## Screenshots
+![Home page](https://i.imgur.com/TLXCAtY.png)
+![Looking up text](https://i.imgur.com/MIeaOeA.png)
+![Saved verses](https://i.imgur.com/khtA3Rg.png)
+
+
 ## Technologies Used
 - MongoDB
 - Express
