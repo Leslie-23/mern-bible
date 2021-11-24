@@ -32,4 +32,4 @@ Whether or not a user is signed in, they can search for and read Bible chapters.
 There are several additional functionalities that would improve The MERN Bible's UX and UI:
 - Notes attached to saved verses
 - Sophisticated/custom error and confirmation messages
-- Page navigation and providing modern Bible translations available. (Bible SuperSearch would be a limiting factor to making these possible, due to its 1000/day rate limit and some modern translations not being available. Another Bible API would have to be used.)
+- Page navigation and providing modern Bible translations. (Bible SuperSearch would be a limiting factor to making these possible, due to its 1000/day rate limit and some modern translations not being available. Another Bible API would have to be used.)
