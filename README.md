@@ -25,7 +25,7 @@
 ## Logo
 The logo was made using the [Inkscape](https://inkscape.org/) vector graphics software.
 ## How It Works
-Whether or not a user is signed in, they can search for and read Bible chapters. If a user is signed in, they can save verses to their list. "Verse-adding mode" is enabled by clicking on any one verse in the chapter and then clicking on the "+" button adjacent to the verse numbers". A user can remove verses from their list via clicking one, and then clicking the adjacent "-" button. 
+Whether or not a user is signed in, they can search for and read Bible chapters. If a user is signed in, they can save verses to their list. "Verse-adding mode" is enabled by clicking on any one verse in the chapter and then clicking on the "+" button adjacent to the verse numbers. A user can remove verses from their list via clicking one, and then clicking the adjacent "-" button. 
 ## Link to Site
 [Heroku](https://mern-bible.herokuapp.com/)
 ## Next Steps
