@@ -3,6 +3,21 @@ import DropChevron from "../../components/Icons/DropChevron";
 import { Disclosure, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
 
+const stack = [
+  { name: "MongoDB", link: "https://www.mongodb.com/" },
+  { name: "Express", link: "https://expressjs.com/" },
+  { name: "React", link: "https://reactjs.org/" },
+  { name: "Node", link: "https://nodejs.dev/" },
+];
+
+const stackItems = stack.map((item, i) => {
+  return (
+    <li key={i} className="text-theme-light hover:text-theme-4">
+      <a href={item.link}>{item.name}</a>
+    </li>
+  );
+});
+
 export default function Home() {
   // const [showing, setShowing] = useState(false);
 
@@ -46,44 +61,31 @@ export default function Home() {
           Sign Up
         </a>
       </div>
-      <Disclosure as="div" className="m-4">
-        {/* {({open}) => (
-
-        )
-
-        
-        } */}
-        <Disclosure.Button className="py-2 text-theme-light hover:text-theme-4">
-          What does "MERN" stand for?
-          <span><DropChevron /></span>
-        </Disclosure.Button>
-        <Transition
-          enter="transition duration-100 in-expo"
-          enterFrom="transform scale-75 opacity-0"
-          enterTo="transform scale-100 opacity-100"
-          leave="transition duration-100 out-expo"
-          leaveFrom="transform scale-100 opacity-100"
-          leaveTo="transform scale-75 opacity-0"
-        >
-          <Disclosure.Panel>
-            MERN is the acronym for the tech stack used to create this
-            application:
-            <ul className="underline">
-              <li>
-                <a href="https://www.mongodb.com/">MongoDB</a>
-              </li>
-              <li>
-                <a href="https://expressjs.com/">Express</a>
-              </li>
-              <li>
-                <a href="https://reactjs.org/">React</a>
-              </li>
-              <li>
-                <a href="https://nodejs.dev/">Node</a>
-              </li>
-            </ul>
-          </Disclosure.Panel>
-        </Transition>
+      <Disclosure as="div" className="m-4 text-center">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
+              <span className="mr-2">What is "MERN"? </span>
+              <DropChevron open={open} />
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 in-expo"
+              enterFrom="transform scale-75 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 out-expo"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-75 opacity-0"
+            >
+              <Disclosure.Panel>
+                <div style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  MERN is the acronym for the tech stack used to create this
+                  application:
+                </div>
+                <ul>{stackItems}</ul>
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
       </Disclosure>
     </div>
   );
