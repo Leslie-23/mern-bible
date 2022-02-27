@@ -1,17 +1,25 @@
+import BibleLogo from "../../components/BibleLogo/BibleLogo";
+
 export default function Home() {
   return (
-    <div className="bg-primary flex text-center flex-col font-theme text-2xl">
-      <h1 className="text-center text-4xl text-theme-dark font-theme font-black">
-        The MERN Bible
-      </h1>
-      <br />
-      <h2 className="text-2xl">
-        A King James Version Bible reference powered by the{" "}
-        <a href="https://api.biblesupersearch.com/" className="underline">
-          Bible SuperSearch API
-        </a>
+    <div className="flex text-center flex-col font-theme text-2xl">
+      <div className="m-8 flex mx-auto" style={{maxWidth: 700, height: 144}}>
+        <div className="pr-2 leading-none text-right text-5xl font-semibold text-white">
+          The
+          <br />
+          MERN
+          <br />
+          Bible
+        </div>
+        <BibleLogo />
+      </div>
+      <h2 className="text-2xl text-white">
+        A King James Version reference
+        <br />
+        powered by{" "}
+        <a href="https://api.biblesupersearch.com/">BibleSuperSearch</a>
       </h2>
-      <br/>
+      <br />
       <a href="/search" className="underline">
         Start Reading
       </a>

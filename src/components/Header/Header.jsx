@@ -1,9 +1,10 @@
 import NavDropdown from "../NavDropdown/NavDropdown";
+import BibleLogo from "../BibleLogo/BibleLogo";
 
 export default function Header({ user, handleLogout }) {
   return (
     <>
-      <nav className="grid grid-cols-3 text-2xl text-theme-dark bg-primary font-theme font-bold">
+      <nav className="grid grid-cols-3 h-24 text-2xl text-theme-dark bg-blue-500 font-theme font-bold">
         <div>
           <a href="/search" className="object-left underline">
             Start Reading
@@ -11,11 +12,7 @@ export default function Header({ user, handleLogout }) {
         </div>
         <div className=" flex justify-center items-center">
           <a href="/">
-            <img
-              src="https://i.imgur.com/uh9ib8o.png"
-              alt="The MERN Bible Logo"
-              className="h-24"
-            />
+            {/* <BibleLogo /> */}
           </a>
         </div>
         <div className="relative text-right">
