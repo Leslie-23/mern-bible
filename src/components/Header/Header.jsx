@@ -1,10 +1,11 @@
 import NavDropdown from "../NavDropdown/NavDropdown";
-import BibleLogo from "../BibleLogo/BibleLogo";
+import BibleLogoOne from "../Icons/BibleLogoOne";
+import HamburgerIcon from "../Icons/HamburgerIcon";
 
 export default function Header({ user, handleLogout }) {
   return (
     <>
-      <nav className="grid grid-cols-3 h-24 text-2xl text-theme-dark bg-blue-500 font-theme font-bold">
+      <nav className="grid grid-cols-3 h-6text-2xl text-theme-light bg-blue-500 font-theme font-bold">
         <div>
           <a href="/search" className="object-left underline">
             Start Reading
@@ -12,10 +13,11 @@ export default function Header({ user, handleLogout }) {
         </div>
         <div className=" flex justify-center items-center">
           <a href="/">
-            {/* <BibleLogo /> */}
+            <BibleLogoOne />
           </a>
         </div>
         <div className="relative text-right">
+          <HamburgerIcon />
           {user ? (
             <NavDropdown user={user} handleLogout={handleLogout} />
           ) : (
@@ -30,8 +32,6 @@ export default function Header({ user, handleLogout }) {
           )}
         </div>
       </nav>
-      <br />
-      <br />
     </>
   );
 }

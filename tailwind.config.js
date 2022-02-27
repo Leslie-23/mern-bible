@@ -7,6 +7,7 @@ module.exports = {
         "theme-light": "#00FFDA",
         "theme-dark": "#003A42",
         "theme-3": "#9FF2E6",
+        "theme-4": "#00917C"
       },
       fontFamily: {
         theme: ["Palanquin Dark", "sans-serif"],
