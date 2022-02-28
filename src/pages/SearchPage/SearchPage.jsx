@@ -22,7 +22,7 @@ export default function SearchPage() {
   console.log(chapterMeta, "<= chapterMeta");
 
   return (
-    <div className="bg-primary text-center">
+    <div className="mt-12 bg-primary text-center">
       <h1 className="font-theme text-white text-3xl">Search for a Bible Chapter</h1>
       <br />
       <SearchForm getQueryObj={getQueryObj} setLoading={setLoading}/>

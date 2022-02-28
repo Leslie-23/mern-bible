@@ -1,6 +1,5 @@
 import NavDropdown from "../NavDropdown/NavDropdown";
 import BibleLogoOne from "../Icons/BibleLogoOne";
-import HamburgerIcon from "../Icons/HamburgerIcon";
 
 export default function Header({ user, handleLogout }) {
   return (

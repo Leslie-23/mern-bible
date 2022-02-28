@@ -1,7 +1,6 @@
 import BibleLogoTwo from "../../components/Icons/BibleLogoTwo";
 import DropChevron from "../../components/Icons/DropChevron";
 import { Disclosure, Transition } from "@headlessui/react";
-import { useEffect, useState } from "react";
 
 const stack = [
   { name: "MongoDB", link: "https://www.mongodb.com/" },

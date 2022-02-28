@@ -33,8 +33,8 @@ export default function SignUpPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div className="bg-primary text-center text-2xl font-theme">
-      <h1 className="text-3xl font-bold">Sign Up</h1>
+    <div className="text-center text-2xl text-theme-dark font-theme">
+      <h1 className="text-3xl text-white">Sign Up</h1>
       <form action="" onSubmit={handleSubmit}>
         <input
           type="text"
@@ -43,9 +43,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.username}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
-        <br/>
+        <br />
         <input
           type="email"
           name="email"
@@ -53,9 +53,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
-        <br/>
+        <br />
         <input
           type="password"
           name="password"
@@ -63,9 +63,9 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
-        <br/>
+        <br />
         <input
           type="password"
           name="passwordConf"
@@ -73,10 +73,15 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           value={fields.passwordConf}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
-        <br/>
-        <button type="submit" className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full">Sign up</button>
+        <br />
+        <button
+          type="submit"
+          className="bg-theme-light p-2 my-4 rounded-lg hover:bg-theme-4 transition in-expo duration-150"
+        >
+          Sign up
+        </button>
       </form>
       <p className="mt-4">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>

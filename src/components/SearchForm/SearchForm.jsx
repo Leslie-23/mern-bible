@@ -53,7 +53,7 @@ export default function SearchForm({ getQueryObj, setLoading }) {
           name="book"
           id=""
           onChange={handleChange}
-          className="mr-8 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
+          className="mx-4 my-2 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
         >
           <option value="">Book</option>
           {bookList}
@@ -62,7 +62,7 @@ export default function SearchForm({ getQueryObj, setLoading }) {
           name="chapter"
           id=""
           onChange={handleChange}
-          className="mr-8 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
+          className="mx-4 my-2 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
         >
           <option value="">Chapter</option>
           {chapterList}
@@ -70,7 +70,7 @@ export default function SearchForm({ getQueryObj, setLoading }) {
         <button
           type="submit"
           style={{ height: 45.6 }}
-          className="px-4 bg-theme-light rounded-lg text-theme-dark font-theme text-xl hover:bg-theme-4 in-expo duration-150"
+          className="mx-4 my-2 px-4 bg-theme-light rounded-lg text-theme-dark font-theme text-xl hover:bg-theme-4 in-expo duration-150"
           disabled={query.book === "" || query.chapter === null}
         >
           Go

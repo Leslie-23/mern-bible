@@ -1,9 +1,14 @@
 import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
+import userService from "../../utils/userService";
 
 export default function Text({ chapterMeta, loading, setLoading }) {
   const [versesArray, setVersesArray] = useState([]);
   const [addMode, toggleAddMode] = useState(false);
+  
+  const user = userService.getUser()
+  console.log(user, "<= user");
+  
   useEffect(() => {
     if (chapterMeta && chapterMeta.results) {
       setLoading(false);
@@ -20,7 +25,7 @@ export default function Text({ chapterMeta, loading, setLoading }) {
   const versesSpans = versesArray.map((v, i) => {
     return (
       <>
-        {addMode ? (
+        {user && addMode ? (
           <button
             className="w-6 h-6 text-theme-dark font-semibold bg-theme-light rounded-full transition in-expo duration-150 hover:bg-opacity-40"
             onClick={() => handleAdd(v)}
