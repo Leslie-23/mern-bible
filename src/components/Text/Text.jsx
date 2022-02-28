@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
-export default function Text({ chapterMeta }) {
+
+export default function Text({ chapterMeta, loading, setLoading }) {
   const [versesArray, setVersesArray] = useState([]);
   const [addMode, toggleAddMode] = useState(false);
   useEffect(() => {
     if (chapterMeta && chapterMeta.results) {
+      setLoading(false);
       const dataForText = chapterMeta.results[0];
       const versesEntries = Object.entries(
         dataForText.verses.kjv[Number(dataForText.chapter_verse)]
@@ -20,7 +22,7 @@ export default function Text({ chapterMeta }) {
       <>
         {addMode ? (
           <button
-            className="text-primary bg-theme-dark w-6 h-6 rounded-full transition in-expo duration-150 hover:bg-theme-light"
+            className="w-6 h-6 text-theme-dark font-semibold bg-theme-light rounded-full transition in-expo duration-150 hover:bg-opacity-40"
             onClick={() => handleAdd(v)}
           >
             +
@@ -31,10 +33,11 @@ export default function Text({ chapterMeta }) {
         <span
           key={i}
           onClick={() => toggleAddMode(!addMode)}
-          className="transition in-expo duration-150 rounded hover:bg-theme-light"
+          className="text-white transition in-expo duration-150 rounded-lg hover:bg-theme-4"
         >
-          <strong>{v[1].verse} </strong>
-          {v[1].text} &nbsp;
+          <sup className="font-semibold text-xl">{v[1].verse}</sup>
+          <span className="mr-2 text-lg">{v[1].text}</span>
+          &nbsp;
         </span>
       </>
     );
@@ -51,20 +54,19 @@ export default function Text({ chapterMeta }) {
 
   return (
     <div className="text-left font-theme px-4">
-      <br />
       {chapterMeta && chapterMeta.results ? (
-        <>
-          <h1 className="text-2xl font-bold">
+        <div>
+          <h1 className="my-4 text-3xl text-white">
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>
-          <br />
-          <div className="text-black text-xl">{versesSpans}</div>
-        </>
+          <div>{versesSpans}</div>
+        </div>
       ) : (
-        <p className="text-center text-xl">
-          Chapter text will appear shortly after clicking "Go". <br />
-          If nothing happens, refresh the page and try again.
+        <p className="text-center text-xl text-white">
+          {loading
+            ? 'If no text appears after clicking "Go", then refresh.'
+            : ""}
         </p>
       )}
     </div>

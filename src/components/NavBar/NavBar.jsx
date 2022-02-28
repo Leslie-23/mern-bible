@@ -4,10 +4,10 @@ import HamburgerIcon from "../Icons/HamburgerIcon";
 
 export default function Header({ user, handleLogout }) {
   return (
-    <nav className="grid grid-cols-3 mb-8 font-theme font-bold text-2xl text-theme-light bg-blue-500 ">
+    <nav className="grid grid-cols-3 mb-8 font-theme text-2xl text-theme-light">
       <div className="flex justify-start">
         <a href="/search">
-          Start Reading
+          <button className="p-2 text-theme-dark bg-theme-light rounded-lg hover:bg-theme-4 transition in-expo duration-150">Start Reading</button>
         </a>
       </div>
       <div className=" flex justify-center items-center">

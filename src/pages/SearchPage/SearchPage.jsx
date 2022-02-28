@@ -6,6 +6,7 @@ import { retrieve } from "../../utils/searchService";
 export default function SearchPage() {
   const [queryObj, setQueryObj] = useState({});
   const [chapterMeta, setChapterMeta] = useState({});
+  const [loading, setLoading] = useState(false);
 
   const getQueryObj = (obj) => {
     setQueryObj(obj);
@@ -22,10 +23,10 @@ export default function SearchPage() {
 
   return (
     <div className="bg-primary text-center">
-      <h1 className="font-theme text-3xl font-bold">Search for a Bible Chapter</h1>
+      <h1 className="font-theme text-white text-3xl">Search for a Bible Chapter</h1>
       <br />
-      <SearchForm getQueryObj={getQueryObj} />
-      <Text chapterMeta={chapterMeta} />
+      <SearchForm getQueryObj={getQueryObj} setLoading={setLoading}/>
+      <Text chapterMeta={chapterMeta} loading={loading} setLoading={setLoading}/>
     </div>
   );
 }

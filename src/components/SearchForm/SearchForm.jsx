@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Chapters from "../../Fixtures/Chapters";
 
-export default function SearchForm({ getQueryObj }) {
+export default function SearchForm({ getQueryObj, setLoading }) {
   const [query, setQuery] = useState({
     book: "",
     chapter: null,
@@ -9,7 +9,7 @@ export default function SearchForm({ getQueryObj }) {
 
   const bookList = Chapters.map((c, i) => {
     return (
-      <option key={i} value={c.book}>
+      <option key={i} value={c.book} className="bg-white text-theme-dark">
         {c.book}
       </option>
     );
@@ -18,6 +18,7 @@ export default function SearchForm({ getQueryObj }) {
   const handleChange = (e) => {
     setQuery({ ...query, [e.target.name]: e.target.value });
   };
+
   console.log(query.book, "<= query.book");
   console.log(query.chapter, "<= query.chapter");
 
@@ -32,7 +33,7 @@ export default function SearchForm({ getQueryObj }) {
 
   const chapterList = chapterArray.map((n, i) => {
     return (
-      <option value={n} key={i}>
+      <option key={i} value={n} className="bg-white text-theme-dark">
         {n}
       </option>
     );
@@ -40,18 +41,19 @@ export default function SearchForm({ getQueryObj }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    setLoading(true);
     console.log("submitted");
     getQueryObj(query);
   };
 
   return (
-    <div className="flex justify-center font-vesper-libre">
+    <div className="flex justify-center">
       <form onSubmit={handleSubmit}>
         <select
           name="book"
           id=""
           onChange={handleChange}
-          className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl focus:outline-none"
+          className="mr-8 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
         >
           <option value="">Book</option>
           {bookList}
@@ -60,14 +62,15 @@ export default function SearchForm({ getQueryObj }) {
           name="chapter"
           id=""
           onChange={handleChange}
-          className="mr-8 bg-primary border-2 border-black rounded font-theme text-xl focus:outline-none"
+          className="mr-8 bg-theme-dark border-4 border-theme-light rounded-lg font-theme text-xl text-white focus:outline-none"
         >
           <option value="">Chapter</option>
           {chapterList}
         </select>
         <button
-          className="bg-primary px-4 py-1 border-2 border-black rounded-full font-theme text-xl"
           type="submit"
+          style={{ height: 45.6 }}
+          className="px-4 bg-theme-light rounded-lg text-theme-dark font-theme text-xl hover:bg-theme-4 in-expo duration-150"
           disabled={query.book === "" || query.chapter === null}
         >
           Go

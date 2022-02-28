@@ -1,4 +1,4 @@
-import BibleLogo from "../../components/Icons/BibleLogoTwo";
+import BibleLogoTwo from "../../components/Icons/BibleLogoTwo";
 import DropChevron from "../../components/Icons/DropChevron";
 import { Disclosure, Transition } from "@headlessui/react";
 import { useEffect, useState } from "react";
@@ -19,16 +19,8 @@ const stackItems = stack.map((item, i) => {
 });
 
 export default function Home() {
-  // const [showing, setShowing] = useState(false);
-
-  // useEffect(() => {
-  //   setTimeout(() => {
-  //     setShowing(true);
-  //   }, 200);
-  // }, []);
-
   return (
-    <div className="flex text-center flex-col font-theme text-2xl">
+    <div className="m-16 flex text-center flex-col font-theme text-2xl">
       <div className="m-4 flex mx-auto" style={{ maxWidth: 720, height: 144 }}>
         <div className="pr-2 leading-none text-right text-5xl font-semibold text-white">
           The
@@ -37,7 +29,7 @@ export default function Home() {
           <br />
           Bible
         </div>
-        <BibleLogo />
+        <BibleLogoTwo />
       </div>
       <div className="m-4 text-2xl text-white">
         A King James Version reference
@@ -48,7 +40,7 @@ export default function Home() {
         </span>
       </div>
       <a href="/search" className="underline">
-        <button className="p-2 m-4 rounded-lg bg-theme-light font-semibold text-theme-dark hover:bg-theme-4 in-expo duration-150">
+        <button className="p-2 m-4 rounded-lg bg-theme-light text-2xl text-theme-dark hover:bg-theme-4 in-expo duration-150">
           Start Reading
         </button>
       </a>
@@ -65,16 +57,16 @@ export default function Home() {
         {({ open }) => (
           <>
             <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
-              <span className="mr-2">What is "MERN"? </span>
+              <span className="mr-2">What is "MERN"?</span>
               <DropChevron open={open} />
             </Disclosure.Button>
             <Transition
               enter="transition duration-100 in-expo"
-              enterFrom="transform scale-75 opacity-0"
+              enterFrom="transform scale-95 opacity-0"
               enterTo="transform scale-100 opacity-100"
               leave="transition duration-100 out-expo"
               leaveFrom="transform scale-100 opacity-100"
-              leaveTo="transform scale-75 opacity-0"
+              leaveTo="transform scale-95 opacity-0"
             >
               <Disclosure.Panel>
                 <div style={{ maxWidth: 720 }} className="mx-auto text-white">

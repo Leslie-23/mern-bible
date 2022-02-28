@@ -5,14 +5,14 @@ export default function NavDropdown({ user, handleLogout }) {
   return (
     <Menu
       as="div"
-      className="absolute right-0 flex flex-col justify-end text-right text-xl bg-primary"
+      className="absolute right-0 flex flex-col justify-end text-right text-xl text-theme-dark"
     >
       {({ open }) => (
         <>
           {user ? (
             <Menu.Button
               as="button"
-              className="absolute top-0 right-0 w-12 h-12 pt-1.5 text-theme-dark border-4 border-theme-dark rounded-full"
+              className="absolute top-0 right-0 w-12 h-12 pt-1.5 text-white rounded-full"
             >
               {user.username.split(" ")[0][0]}
             </Menu.Button>
@@ -30,9 +30,9 @@ export default function NavDropdown({ user, handleLogout }) {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Menu.Items className="p-2 mt-12 bg-blue-500 rounded-xl">
+            <Menu.Items className="p-4 mt-12 text-white bg-theme-dark bg-opacity-50 border-4 border-theme-light rounded-lg">
               {user ? (
-                <>
+                <div>
                   <Menu.Item disabled as="p">
                     {user.username}
                     <br />
@@ -50,16 +50,16 @@ export default function NavDropdown({ user, handleLogout }) {
                       Log Out
                     </a>
                   </Menu.Item>
-                </>
+                </div>
               ) : (
-                <>
-                  <Menu.Item as="p">
+                <div>
+                  <Menu.Item as="p" className="hover:text-theme-4">
                     <a href="/login">Log In</a>
                   </Menu.Item>
-                  <Menu.Item as="p">
+                  <Menu.Item as="p" className="hover:text-theme-4">
                     <a href="/signup">Sign Up</a>
                   </Menu.Item>
-                </>
+                </div>
               )}
             </Menu.Items>
           </Transition>
