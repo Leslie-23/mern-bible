@@ -55,7 +55,7 @@ export default function Text({ chapterMeta, loading, setLoading }) {
   };
 
   return (
-    <div className="text-left font-theme px-4">
+    <div className="text-left font-theme">
       {chapterMeta && chapterMeta.results ? (
         <div>
           <h1 className="my-4 text-3xl text-white">

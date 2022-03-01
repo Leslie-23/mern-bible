@@ -53,10 +53,6 @@ export default function SavedVerseList({ verses, setVerses }) {
             </>
           )}
         </Disclosure>
-        {/* <h1 className="inline-flex text-2xl text-white">
-              {v.book} {v.chapter}:{v.verse}
-            </h1>
-            <p className="text-xl text-white">{v.text}</p> */}
       </div>
     );
   });
