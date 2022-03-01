@@ -1,10 +1,17 @@
 import { useState, useEffect } from "react";
 import { add } from "../../utils/searchService";
-export default function Text({ chapterMeta }) {
+import userService from "../../utils/userService";
+
+export default function Text({ chapterMeta, loading, setLoading }) {
   const [versesArray, setVersesArray] = useState([]);
   const [addMode, toggleAddMode] = useState(false);
+
+  const user = userService.getUser();
+  console.log(user, "<= user");
+
   useEffect(() => {
     if (chapterMeta && chapterMeta.results) {
+      setLoading(false);
       const dataForText = chapterMeta.results[0];
       const versesEntries = Object.entries(
         dataForText.verses.kjv[Number(dataForText.chapter_verse)]
@@ -17,26 +24,24 @@ export default function Text({ chapterMeta }) {
 
   const versesSpans = versesArray.map((v, i) => {
     return (
-      <>
-        {addMode ? (
+      <span key={i} className="text-white rounded-lg hover:bg-theme-4">
+        {user && addMode ? (
           <button
-            className="text-primary bg-theme-dark w-6 h-6 rounded-full transition in-expo duration-150 hover:bg-theme-light"
+            className="px-2 text-theme-dark font-semibold bg-white rounded-lg transition in-expo duration-150 hover:bg-theme-light"
             onClick={() => handleAdd(v)}
           >
-            +
+            + {v[1].verse}
           </button>
         ) : (
-          ""
+          <button disabled className="px-2 text-theme-dark font-semibold bg-white rounded-lg transition in-expo duration-150">
+            {v[1].verse}
+          </button>
         )}
-        <span
-          key={i}
-          onClick={() => toggleAddMode(!addMode)}
-          className="transition in-expo duration-150 rounded hover:bg-theme-light"
-        >
-          <strong>{v[1].verse} </strong>
-          {v[1].text} &nbsp;
+        <span onClick={() => toggleAddMode(!addMode)} className="text-lg">
+          {v[1].text}
         </span>
-      </>
+        &nbsp;
+      </span>
     );
   });
 
@@ -51,20 +56,21 @@ export default function Text({ chapterMeta }) {
 
   return (
     <div className="text-left font-theme px-4">
-      <br />
       {chapterMeta && chapterMeta.results ? (
-        <>
-          <h1 className="text-2xl font-bold">
+        <div>
+          <h1 className="my-4 text-3xl text-white">
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>
+          <hr />
           <br />
-          <div className="text-black text-xl">{versesSpans}</div>
-        </>
+          <div>{versesSpans}</div>
+        </div>
       ) : (
-        <p className="text-center text-xl">
-          Chapter text will appear shortly after clicking "Go". <br />
-          If nothing happens, refresh the page and try again.
+        <p className="text-center text-xl text-white">
+          {loading
+            ? 'If no text appears after clicking "Go", then refresh.'
+            : ""}
         </p>
       )}
     </div>

@@ -19,9 +19,8 @@ export default function SavedPage() {
   };
 
   return (
-    <div>
-      <h1 className="text-3xl text-center font-bold">My Saved Verses</h1>
-      <br/>
+    <div className="mt-12">
+      <h1 className="m-8 text-3xl text-center text-white">My Saved Verses</h1>
       <SavedVerseList verses={verses} setVerses={setVerses} />
     </div>
   );

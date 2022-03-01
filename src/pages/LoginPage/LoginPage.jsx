@@ -32,8 +32,8 @@ export default function LoginPage({ handleSignupOrLogin }) {
   };
 
   return (
-    <div className="bg-primary text-center text-2xl font-theme">
-      <h1 className="text-3xl font-bold">Log In</h1>
+    <div className="text-center text-2xl text-theme-dark font-theme">
+      <h1 className="text-3xl text-white">Log In</h1>
       <form onSubmit={handleSubmit}>
         <input
           type="email"
@@ -42,7 +42,7 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.email}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
         <br />
         <input
@@ -52,25 +52,25 @@ export default function LoginPage({ handleSignupOrLogin }) {
           value={fields.password}
           onChange={handleChange}
           required={true}
-          className="mt-4 border-2 border-black rounded focus:outline-none"
+          className="mt-4 p-2 border-2 rounded-lg focus:outline-none"
         />
         <br />
         <button
           type="submit"
-          className="bg-primary px-4 py-1 my-4 border-2 border-black rounded-full"
+          className="bg-theme-light p-2 my-4 rounded-lg hover:bg-theme-4 transition in-expo duration-150"
         >
-          Log in
+          Log In
         </button>
       </form>
       <p>
-        No account?{" "}
-        <button>
-          <a href="/signup" className="underline">
+        <span className="text-white">No account?</span>{" "}
+        <span>
+          <a href="/signup" className="text-theme-light hover:text-theme-4">
             Sign up
           </a>
-        </button>
+        </span>
       </p>
-      <p>{error ? <ErrorMessage error={error} /> : null}</p>
+      <p className="text-yellow-400">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
   );
 }

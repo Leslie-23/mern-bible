@@ -4,12 +4,13 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#EDEACE",
-        "theme-light": "#F58888",
-        "theme-dark": "#760A0A",
+        "theme-light": "#00FFDA",
+        "theme-dark": "#003A42",
+        "theme-3": "#9FF2E6",
+        "theme-4": "#00917C"
       },
       fontFamily: {
-        theme: ["'Vesper Libre'", "cursive"],
+        theme: ["Palanquin Dark", "sans-serif"],
       },
       transitionTimingFunction: {
         "in-expo": "cubic-bezier(0.54, 0.54, 0.02, 0.96)",

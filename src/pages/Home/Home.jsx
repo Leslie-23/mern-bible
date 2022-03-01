@@ -1,40 +1,111 @@
+import BibleLogoTwo from "../../components/Icons/BibleLogoTwo";
+import DropChevron from "../../components/Icons/DropChevron";
+import { Disclosure, Transition } from "@headlessui/react";
+
+const stack = [
+  { name: "MongoDB", link: "https://www.mongodb.com/" },
+  { name: "Express", link: "https://expressjs.com/" },
+  { name: "React", link: "https://reactjs.org/" },
+  { name: "Node", link: "https://nodejs.dev/" },
+];
+
+const stackItems = stack.map((item, i) => {
+  return (
+    <li key={i} className="text-theme-light hover:text-theme-4">
+      <a href={item.link}>{item.name}</a>
+    </li>
+  );
+});
+
 export default function Home() {
   return (
-    <div className="bg-primary flex text-center flex-col font-theme text-2xl">
-      <h1 className="text-center text-4xl text-theme-dark font-theme font-black">
-        The MERN Bible
-      </h1>
-      <br />
-      <h2 className="text-2xl">
-        A King James Version Bible reference powered by the{" "}
-        <a href="https://api.biblesupersearch.com/" className="underline">
-          Bible SuperSearch API
-        </a>
-      </h2>
-      <br/>
+    <div className="mt-24 flex text-center flex-col font-theme text-2xl">
+      <div className="m-4 flex mx-auto" style={{ maxWidth: 720, height: 144 }}>
+        <div className="pr-2 leading-none text-right text-5xl font-semibold text-white">
+          The
+          <br />
+          MERN
+          <br />
+          Bible
+        </div>
+        <BibleLogoTwo />
+      </div>
+      <div className="m-4 text-2xl text-white">
+        A King James Version reference
+        <br />
+        powered by{" "}
+        <span className="text-theme-light hover:text-theme-4">
+          <a href="https://api.biblesupersearch.com/">BibleSuperSearch</a>
+        </span>
+      </div>
       <a href="/search" className="underline">
-        Start Reading
+        <button className="p-2 m-4 rounded-lg bg-theme-light text-2xl text-theme-dark hover:bg-theme-4 in-expo duration-150">
+          Start Reading
+        </button>
       </a>
-      <br />
-      <br />
-      <h1>What does "MERN" stand for?</h1>
-      <h2>
-        MERN is the acronym for the tech stack used to create this application:
-      </h2>
-      <ul className="underline">
-        <li>
-          <a href="https://www.mongodb.com/">MongoDB</a>
-        </li>
-        <li>
-          <a href="https://expressjs.com/">Express</a>
-        </li>
-        <li>
-          <a href="https://reactjs.org/">React</a>
-        </li>
-        <li>
-          <a href="https://nodejs.dev/">Node</a>
-        </li>
-      </ul>
+      <div className="m-4 text-theme-light">
+        <a href="/login" className="hover:text-theme-4">
+          Log In
+        </a>
+        <span className="text-white"> or </span>
+        <a href="/signup" className="hover:text-theme-4">
+          Sign Up
+        </a>
+      </div>
+      <Disclosure as="div" className="m-4 text-center">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
+              <span className="mr-2">How does it work?</span>
+              <DropChevron open={open} />
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 in-expo"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 out-expo"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel>
+                <p style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  Anyone, whether logged in or not, can look up and read Bible
+                  chapters. Logged-in users can save verses to their personal
+                  list. This is done by clicking anywhere on a chapter's text,
+                  then clicking "+ [verse number]". Verses can be removed from a
+                  user's list by clicking "-".
+                </p>
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
+      </Disclosure>
+      <Disclosure as="div" className="m-4 text-center">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
+              <span className="mr-2">What is "MERN"?</span>
+              <DropChevron open={open} />
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 in-expo"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 out-expo"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel>
+                <p style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  MERN is the acronym for the tech stack used to create this
+                  application:
+                </p>
+                <ul>{stackItems}</ul>
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
+      </Disclosure>
     </div>
   );
 }
