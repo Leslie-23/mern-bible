@@ -70,10 +70,10 @@ export default function Home() {
               <Disclosure.Panel>
                 <p style={{ maxWidth: 720 }} className="mx-auto text-white">
                   Anyone, whether logged in or not, can look up and read Bible
-                  chapters. Logged in users can save verses to their personal
-                  list. This is done by clicking anywhere on a chapter's text
-                  and then clicking "+". Verses can be removed from a user's
-                  list by clicking "-".
+                  chapters. Logged-in users can save verses to their personal
+                  list. This is done by clicking anywhere on a chapter's text,
+                  then clicking "+ [verse number]". Verses can be removed from a
+                  user's list by clicking "-".
                 </p>
               </Disclosure.Panel>
             </Transition>

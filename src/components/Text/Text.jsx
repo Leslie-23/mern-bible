@@ -24,27 +24,24 @@ export default function Text({ chapterMeta, loading, setLoading }) {
 
   const versesSpans = versesArray.map((v, i) => {
     return (
-      <>
+      <span key={i} className="text-white rounded-lg hover:bg-theme-4">
         {user && addMode ? (
           <button
-            className="inline-flex justify-center items-center w-6 h-6 p-4 mr-2 text-theme-dark font-semibold bg-theme-light rounded-full transition in-expo duration-150 hover:bg-theme-4"
+            className="px-2 text-theme-dark font-semibold bg-white rounded-lg transition in-expo duration-150 hover:bg-theme-light"
             onClick={() => handleAdd(v)}
           >
-            +
+            + {v[1].verse}
           </button>
         ) : (
-          ""
+          <button disabled className="px-2 text-theme-dark font-semibold bg-white rounded-lg transition in-expo duration-150">
+            {v[1].verse}
+          </button>
         )}
-        <span
-          key={i}
-          onClick={() => toggleAddMode(!addMode)}
-          className="text-white transition in-expo duration-150 rounded-lg hover:bg-theme-4"
-        >
-          <sup className="font-semibold text-xl">{v[1].verse}</sup>
-          <span className="mr-2 text-lg">{v[1].text}</span>
-          &nbsp;
+        <span onClick={() => toggleAddMode(!addMode)} className="text-lg">
+          {v[1].text}
         </span>
-      </>
+        &nbsp;
+      </span>
     );
   });
 
@@ -65,6 +62,8 @@ export default function Text({ chapterMeta, loading, setLoading }) {
             {chapterMeta.results[0].book_name}{" "}
             {chapterMeta.results[0].chapter_verse}
           </h1>
+          <hr />
+          <br />
           <div>{versesSpans}</div>
         </div>
       ) : (

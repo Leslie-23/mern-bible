@@ -35,15 +35,20 @@ export default function SavedVerseList({ verses, setVerses }) {
                 leaveTo="transform scale-95 opacity-0"
               >
                 <Disclosure.Panel>
-                  <div style={{ maxWidth: 720 }} className="flex text-white">
-                    <p className="text-xl">{v.text}</p>
-                    <button
-                      className="flex justify-center items-center w-6 h-6 p-4 ml-2 text-theme-dark font-semibold bg-theme-light rounded-full transition in-expo duration-150 hover:bg-theme-4"
-                      onClick={() => handleRemove(v)}
-                    >
-                      -
-                    </button>
-                  </div>
+                  <p
+                    style={{ maxWidth: 720 }}
+                    className="flex text-xl text-white"
+                  >
+                    {v.text}
+                    <span>
+                      <button
+                        className="px-2 ml-2 text-theme-dark font-semibold bg-theme-light rounded-lg transition in-expo duration-150 hover:bg-theme-4"
+                        onClick={() => handleRemove(v)}
+                      >
+                        -
+                      </button>
+                    </span>
+                  </p>
                 </Disclosure.Panel>
               </Transition>
             </>

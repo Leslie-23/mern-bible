@@ -46,8 +46,8 @@ function App() {
           path="signup"
           element={<SignupPage handleSignupOrLogin={handleSignupOrLogin} />}
         />
-        <Route path="logout" element={<Home />} />
       </Route>
+      <Route path="logout" element={<Home />} />
     </Routes>
   );
 }

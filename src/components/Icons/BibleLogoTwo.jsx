@@ -21,7 +21,7 @@ export default function BibleLogoTwo() {
         three: 129.43592,
         four: 126.43592,
       });
-    }, 250);
+    }, 350);
   }, []);
 
   const chevronOnePath = `m 98.315898,${deltas.one} v -2 l 17.320502,10 25.9808,-15 v 2 l -25.9808,15 z`;
