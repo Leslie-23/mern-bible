@@ -56,32 +56,6 @@ export default function Home() {
         {({ open }) => (
           <>
             <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
-              <span className="mr-2">What is "MERN"?</span>
-              <DropChevron open={open} />
-            </Disclosure.Button>
-            <Transition
-              enter="transition duration-100 in-expo"
-              enterFrom="transform scale-95 opacity-0"
-              enterTo="transform scale-100 opacity-100"
-              leave="transition duration-100 out-expo"
-              leaveFrom="transform scale-100 opacity-100"
-              leaveTo="transform scale-95 opacity-0"
-            >
-              <Disclosure.Panel>
-                <div style={{ maxWidth: 720 }} className="mx-auto text-white">
-                  MERN is the acronym for the tech stack used to create this
-                  application:
-                </div>
-                <ul>{stackItems}</ul>
-              </Disclosure.Panel>
-            </Transition>
-          </>
-        )}
-      </Disclosure>
-      <Disclosure as="div" className="m-4 text-center">
-        {({ open }) => (
-          <>
-            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
               <span className="mr-2">How does it work?</span>
               <DropChevron open={open} />
             </Disclosure.Button>
@@ -94,9 +68,39 @@ export default function Home() {
               leaveTo="transform scale-95 opacity-0"
             >
               <Disclosure.Panel>
-                <div style={{ maxWidth: 720 }} className="mx-auto text-white">
-                  Logged-in users can save verses to their list
-                </div>
+                <p style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  Anyone, whether logged in or not, can look up and read Bible
+                  chapters. Logged in users can save verses to their personal
+                  list. This is done by clicking anywhere on a chapter's text
+                  and then clicking "+". Verses can be removed from a user's
+                  list by clicking "-".
+                </p>
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
+      </Disclosure>
+      <Disclosure as="div" className="m-4 text-center">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
+              <span className="mr-2">What is "MERN"?</span>
+              <DropChevron open={open} />
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 in-expo"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 out-expo"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel>
+                <p style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  MERN is the acronym for the tech stack used to create this
+                  application:
+                </p>
+                <ul>{stackItems}</ul>
               </Disclosure.Panel>
             </Transition>
           </>
