@@ -1,20 +1,26 @@
-![The MERN Bible Logo](https://i.imgur.com/uh9ib8o.png)
+![The MERN Bible Logo](https://i.imgur.com/Yzffde7.png)
 # The MERN Bible
-### A King James Version Bible reference powered by the [Bible SuperSearch API](https://api.biblesupersearch.com/)
-## Screenshots
-![Home page](https://i.imgur.com/TLXCAtY.png)
-![Looking up text](https://i.imgur.com/MIeaOeA.png)
-![Saved verses](https://i.imgur.com/khtA3Rg.png)
+### A King James Version reference powered by [BibleSuperSearch](https://api.biblesupersearch.com/)
 
+## Link to Site
+[Heroku](https://mern-bible.herokuapp.com/)
+
+## How It Works
+Anyone, whether logged in or not, can look up and read Bible chapters. Logged-in users can save verses to their personal list. This is done by clicking anywhere on a chapter's text, then clicking "+ [verse number]". Verses can be removed from a user's list by clicking "-". 
+
+## Screenshots
+![Home page](https://i.imgur.com/7YkID3P.png)
+![Looking up text](https://i.imgur.com/HjOk6NY.png)
+![Saved verses](https://i.imgur.com/0ZyuLQP.png)
 
 ## Technologies Used
 - MongoDB
 - Express
 - React
 - Node
-- TailwindCSS
-- HeadlessUI
-- Browser testing done in Microsoft Edge
+- Tailwind CSS
+- Headless UI
+- Browser testing done in Microsoft Edge and Firefox
 
 ## Planning
 ### Trello Board
@@ -23,11 +29,8 @@
 ![ERD](https://i.imgur.com/8ZCZJUF.png)
 
 ## Logo
-The logo was made using the [Inkscape](https://inkscape.org/) vector graphics software.
-## How It Works
-Whether or not a user is signed in, they can search for and read Bible chapters. If a user is signed in, they can save verses to their list. "Verse-adding mode" is enabled by clicking on any one verse in the chapter and then clicking on the "+" button adjacent to the verse numbers. A user can remove verses from their list via clicking one, and then clicking the adjacent "-" button. 
-## Link to Site
-[Heroku](https://mern-bible.herokuapp.com/)
+The logos and icons were made using [Inkscape](https://inkscape.org/), an open-source SVG editor.
+
 ## Next Steps
 There are several additional functionalities that would improve The MERN Bible's UX and UI:
 - Notes attached to saved verses
