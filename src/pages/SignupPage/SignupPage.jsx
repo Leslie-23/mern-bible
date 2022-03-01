@@ -83,7 +83,7 @@ export default function SignUpPage({ handleSignupOrLogin }) {
           Sign up
         </button>
       </form>
-      <p className="mt-4">{error ? <ErrorMessage error={error} /> : null}</p>
+      <p className="mt-4 text-yellow-400">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
   );
 }

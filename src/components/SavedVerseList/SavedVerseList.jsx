@@ -20,7 +20,7 @@ export default function SavedVerseList({ verses, setVerses }) {
         <div>
           {removeMode ? (
             <button
-              className="text-primary bg-theme-dark w-6 h-6 rounded-full transition in-expo duration-150 hover:bg-theme-light"
+              className="text-theme-dark font-semibold bg-theme-light w-6 h-6 rounded-full transition in-expo duration-150 hover:bg-theme-4"
               onClick={() => handleRemove(v)}
             >
               -
@@ -30,13 +30,13 @@ export default function SavedVerseList({ verses, setVerses }) {
           )}
           <div
             key={i}
-            className="transition in-expo duration-150 rounded hover:bg-theme-light"
+            className="transition in-expo duration-150 rounded hover:bg-theme-4"
             onClick={() => toggleRemoveMode(!removeMode)}
           >
-            <h1 className="inline-flex text-2xl font-bold">
+            <h1 className="inline-flex text-2xl text-white">
               {v.book} {v.chapter}:{v.verse}
             </h1>
-            <p className="text-xl">{v.text}</p>
+            <p className="text-xl text-white">{v.text}</p>
           </div>
         </div>
         <br />

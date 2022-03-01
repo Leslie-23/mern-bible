@@ -70,7 +70,7 @@ export default function LoginPage({ handleSignupOrLogin }) {
           </a>
         </span>
       </p>
-      <p>{error ? <ErrorMessage error={error} /> : null}</p>
+      <p className="text-yellow-400">{error ? <ErrorMessage error={error} /> : null}</p>
     </div>
   );
 }

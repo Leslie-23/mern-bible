@@ -78,6 +78,30 @@ export default function Home() {
           </>
         )}
       </Disclosure>
+      <Disclosure as="div" className="m-4 text-center">
+        {({ open }) => (
+          <>
+            <Disclosure.Button className="flex items-center py-2 mx-auto text-theme-light hover:text-theme-4">
+              <span className="mr-2">How does it work?</span>
+              <DropChevron open={open} />
+            </Disclosure.Button>
+            <Transition
+              enter="transition duration-100 in-expo"
+              enterFrom="transform scale-95 opacity-0"
+              enterTo="transform scale-100 opacity-100"
+              leave="transition duration-100 out-expo"
+              leaveFrom="transform scale-100 opacity-100"
+              leaveTo="transform scale-95 opacity-0"
+            >
+              <Disclosure.Panel>
+                <div style={{ maxWidth: 720 }} className="mx-auto text-white">
+                  Logged-in users can save verses to their list
+                </div>
+              </Disclosure.Panel>
+            </Transition>
+          </>
+        )}
+      </Disclosure>
     </div>
   );
 }

@@ -12,7 +12,7 @@ export default function NavDropdown({ user, handleLogout }) {
           {user ? (
             <Menu.Button
               as="button"
-              className="absolute top-0 right-0 w-12 h-12 pt-1.5 text-white rounded-full"
+              className="absolute top-0 right-0 w-12 h-12 text-white border-4 border-theme-light rounded-full"
             >
               {user.username.split(" ")[0][0]}
             </Menu.Button>
@@ -30,7 +30,7 @@ export default function NavDropdown({ user, handleLogout }) {
             leaveFrom="transform scale-100 opacity-100"
             leaveTo="transform scale-95 opacity-0"
           >
-            <Menu.Items className="p-4 mt-12 text-white bg-theme-dark bg-opacity-50 border-4 border-theme-light rounded-lg">
+            <Menu.Items className="p-4 mt-16 text-white bg-theme-dark bg-opacity-60 border-4 border-theme-light rounded-lg">
               {user ? (
                 <div>
                   <Menu.Item disabled as="p">
@@ -38,13 +38,13 @@ export default function NavDropdown({ user, handleLogout }) {
                     <br />
                     {user.email}
                   </Menu.Item>
-                  <Menu.Item as="p">
+                  <Menu.Item as="p" className="hover:text-theme-4">
                     <a href="/saved">My Saved Verses</a>
                   </Menu.Item>
                   <Menu.Item as="p">
                     <a
                       href="/logout"
-                      className="underline"
+                      className="hover:text-theme-4"
                       onClick={handleLogout}
                     >
                       Log Out
