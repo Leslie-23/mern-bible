@@ -21,10 +21,12 @@ Anyone, whether logged in or not, can look up and read Bible chapters. Logged-in
 - Tailwind CSS
 - Headless UI
 - Browser testing done in Microsoft Edge and Firefox
+- UI planning done with Figma
 
 ## Planning
 ### Trello Board
 [Trello](https://trello.com/b/4Mi5b7wl/mern-bible)
+
 ### ERD
 ![ERD](https://i.imgur.com/8ZCZJUF.png)
 
