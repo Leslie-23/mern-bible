@@ -17,7 +17,7 @@ export default function SavedVerseList({ verses, setVerses }) {
   const verseList = verses.map((v, i) => {
     return (
       <div key={i}>
-        <Disclosure as="div" className="m-4">
+        <Disclosure as="div" className="my-4">
           {({ open }) => (
             <>
               <Disclosure.Button className="flex py-2 text-theme-light hover:text-theme-4">
@@ -36,13 +36,12 @@ export default function SavedVerseList({ verses, setVerses }) {
               >
                 <Disclosure.Panel>
                   <p
-                    style={{ maxWidth: 720 }}
                     className="flex text-xl text-white"
                   >
                     {v.text}
                     <span>
                       <button
-                        className="px-2 ml-2 text-theme-dark font-semibold bg-theme-light rounded-lg transition in-expo duration-150 hover:bg-theme-4"
+                        className="px-2 ml-2 text-theme-dark font-semibold bg-white rounded-lg transition in-expo duration-150 hover:bg-theme-light"
                         onClick={() => handleRemove(v)}
                       >
                         -

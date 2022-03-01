@@ -19,7 +19,7 @@ const stackItems = stack.map((item, i) => {
 
 export default function Home() {
   return (
-    <div className="m-16 flex text-center flex-col font-theme text-2xl">
+    <div className="mt-24 flex text-center flex-col font-theme text-2xl">
       <div className="m-4 flex mx-auto" style={{ maxWidth: 720, height: 144 }}>
         <div className="pr-2 leading-none text-right text-5xl font-semibold text-white">
           The
